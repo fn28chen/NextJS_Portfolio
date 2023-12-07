@@ -69,7 +69,7 @@ const HeroContent = () => {
           variants={slideInFromLeft(1)}
           className={`text-lg text-gray-400 my-5 max-w-[600px] text-justify`}
         >
-          Hello, I'm Tr Phong - Dominik, a web designer and developer, I am a
+          Hello, I{`'`}m Tr Phong - Dominik, a web designer and developer, I am a
           person who is always curious about new things. Recently I am trying to
           challenge myself by learning web development with ambition to become a
           specialist.
