@@ -38,7 +38,7 @@ const HeroContent = () => {
         className={`h-full w-full flex flex-col gap-5 justify-center text-start m-auto`}
       >
         <motion.div
-          variants={slideInFromTop}
+          variants={slideInFromTop(0.5)}
           className={`Welcome-box py-2 px-4 border border-green-500 opacity-[0.9]`}
         >
           <SparklesIcon
@@ -67,7 +67,7 @@ const HeroContent = () => {
         </motion.div>
         <motion.p
           variants={slideInFromLeft(1)}
-          className={`text-lg text-gray-400 my-5 max-w-[600px] text-justify`}
+          className={`text-sm md:text-lg lg:text-2xl text-gray-400 my-5 max-w-[600px] text-justify`}
         >
           Hello, I{`'`}m Tr Phong - Dominik, a web designer and developer, I am a
           person who is always curious about new things. Recently I am trying to
@@ -81,8 +81,7 @@ const HeroContent = () => {
           <Link href={`/about-me`} className={`group block`}>
             <Button
               className="
-              before:ease relative h-12 w-40 overflow-hidden border border-white bg-black text-white shadow-2xl transition-all before:absolute before:right-0 before:top-0 before:h-12 before:w-6 before:translate-x-12 before:rotate-6 before:bg-white before:opacity-10 before:duration-700 hover:shadow-black hover:before:-translate-x-40
-              hover:bg-white hover:text-black hover:duration-700"
+              hover:before:bg-redborder-red-500 relative h-[50px] w-40 overflow-hidden border border-green-500 bg-black px-3 text-green-500 shadow-2xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-green-500 before:transition-all before:duration-300 hover:text-white hover:shadow-green-500 hover:bg-black hover:before:left-0 hover:before:w-full"
             >
               <span
                 className={`text-white group-hover:text-black relative z-10`}

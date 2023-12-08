@@ -56,7 +56,7 @@ const Header: React.FC<HeaderProps> = (className) => {
   const [path, setPath] = useState("intro");
   return (
     <header
-      className={`bg-black py-2 fixed top-0 z-50 w-full px-12 flex justify-between items-center text-[20px] ${className}`}
+      className={`bg-black bg-opacity-50 py-2 fixed top-0 z-50 w-full px-12 flex justify-between items-center text-[20px] ${className}`}
     >
       <Link href={"/"} className="w-full flex flex-row items-center">
         <Image src={SZP} alt="Maoffff" width={50} height={50} />

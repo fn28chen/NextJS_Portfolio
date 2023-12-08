@@ -30,6 +30,17 @@
   transition: 0.45s cubic-bezier(0.6, 0.6, 0, 1) box-shadow;
 }
 
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: rgb(0, 255, 13);
+  z-index: 1;
+  transform-origin: 0%;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
