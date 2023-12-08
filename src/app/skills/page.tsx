@@ -17,7 +17,7 @@ const Skills = () => {
       className={`flex flex-row items-center justify-center mt-20 px-20 w-full z-[20]`}
     >
       <motion.div
-        variants={slideInFromTop}
+        variants={slideInFromTop(0.5)}
         className={`Welcome-box py-2 px-4 border border-green-500 opacity-[0.9]`}
       >
         <SparklesIcon className={`h-5 w-5 text-green-500 inline-block mr-2`} />
