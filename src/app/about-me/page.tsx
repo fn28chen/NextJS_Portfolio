@@ -59,7 +59,9 @@ const AboutMe = () => {
         <h1 className={`text-[14px] text-washed-blue-400`}>About Me</h1>
       </motion.div>
       <motion.div
-        className={`grid grid-flow-row grid-cols-2 gap-6 mt-6 text-xl text-bold text-slate-100 z-10`}
+        className={`
+        grid grid-cols-2
+        gap-6 mt-6 text-xl text-bold text-slate-100 z-10`}
       >
         {info.map((item, index) => (
           <motion.div
@@ -70,14 +72,14 @@ const AboutMe = () => {
                 : slideInFromRight(0.75 + (index + 1) * 0.2)
             }
             className={`
-            flex flex-col 
-            gap-6 mt-6
-            ${index % 2 === 0 ? `` : `pt-20`}
-            text-bold text-slate-100 
-            z-10 max-w-[300px] h-auto
-            lg:flex-row lg:gap-2 lg:mt-2 lg:max-w-[400px]
-            hover:
+              flex
+              gap-6 mt-6
+              text-bold text-slate-100 
+              z-10 max-w-[300px] h-[200px]
+              lg:flex-row lg:gap-2 lg:mt-2 lg:max-w-[400px]
+              hover:
             `}
+            style={{ marginTop: index % 2 === 0 ? "0" : "40px" }}
           >
             <Card className={`hover:drop-shadow-xl`}>
               <CardHeader>
@@ -101,7 +103,9 @@ const AboutMe = () => {
             className={`hover:before:bg-redborder-red-500 relative h-[50px] w-40 overflow-hidden border border-green-500 bg-black px-3 text-green-500 shadow-2xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-green-500 before:transition-all before:duration-300 hover:text-white hover:shadow-green-500 hover:bg-black hover:before:left-0 hover:before:w-full 
             `}
           >
-            <span className={`group-hover:${"hidden"} text-white group-hover:text-black relative z-10`}>
+            <span
+              className={`group-hover:${"hidden"} text-white group-hover:text-black relative z-10`}
+            >
               Continue to my skills
             </span>
             <LiaLongArrowAltRightSolid
