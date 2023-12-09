@@ -76,7 +76,7 @@ const AboutMe = () => {
               `${ index % 2 === 0 ? `sm:mt-0 lg:mt-0 `: `sm:mt-10 lg:mt-10 `}
               flex gap-6
               text-bold text-slate-100 
-              z-10 max-w-[300px] h-[200px]
+              z-10 max-w-[300px] h-[220px]
               lg:flex-row lg:gap-2 lg:mt-2 lg:max-w-[400px]`
             }
           >
