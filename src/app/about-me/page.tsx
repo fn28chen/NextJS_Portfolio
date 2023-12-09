@@ -60,8 +60,9 @@ const AboutMe = () => {
       </motion.div>
       <motion.div
         className={`
-        grid grid-cols-2
-        gap-6 mt-6 text-xl text-bold text-slate-100 z-10`}
+        grid grid-cols-1
+        sm:grid-cols-2 
+        gap-6 mt-6 text-sm sm:text-md md:text-base text-bold text-slate-100 z-10`}
       >
         {info.map((item, index) => (
           <motion.div
@@ -71,22 +72,22 @@ const AboutMe = () => {
                 ? slideInFromLeft(0.75 + (index + 1) * 0.2)
                 : slideInFromRight(0.75 + (index + 1) * 0.2)
             }
-            className={`
-              flex
-              gap-6 mt-6
+            className={
+              `${ index % 2 === 0 ? `sm:mt-0 lg:mt-0 `: `sm:mt-10 lg:mt-10 `}
+              flex gap-6
               text-bold text-slate-100 
               z-10 max-w-[300px] h-[200px]
-              lg:flex-row lg:gap-2 lg:mt-2 lg:max-w-[400px]
-              hover:
-            `}
-            style={{ marginTop: index % 2 === 0 ? "0" : "40px" }}
+              lg:flex-row lg:gap-2 lg:mt-2 lg:max-w-[400px]`
+            }
           >
-            <Card className={`hover:drop-shadow-xl`}>
+            <Card className={
+              `hover:drop-shadow-xl pb-2`
+            }>
               <CardHeader>
-                <CardTitle>{item.title}</CardTitle>
+                <CardTitle className={`text-base md:text-lg lg:text-2xl`}>{item.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className={`text-justify`}>
+                <CardDescription className={`text-justify text-[12px] md:text-[14px]`}>
                   {item.description}
                 </CardDescription>
               </CardContent>
@@ -96,7 +97,7 @@ const AboutMe = () => {
       </motion.div>
       <motion.div
         variants={slideInFromLeft(2)}
-        className={`flex flex-row items-center justify-center mt-20 px-20 w-full z-[20]`}
+        className={`flex flex-row items-center justify-center mt-10 mb-5 md:mt-20 md:px-20 w-full z-[20]`}
       >
         <Link href="/skills">
           <Button
