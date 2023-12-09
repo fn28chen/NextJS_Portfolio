@@ -77,7 +77,7 @@ const AboutMe = () => {
               flex gap-6
               text-bold text-slate-100 
               z-10 max-w-[300px] h-[220px]
-              lg:flex-row lg:gap-2 lg:mt-2 lg:max-w-[400px]`
+              lg:flex-row lg:max-w-[400px]`
             }
           >
             <Card className={
