@@ -66,7 +66,17 @@ const Header: React.FC<HeaderProps> = (className) => {
       </Link>
       <NavigationMenu className="hidden md:block">
         <NavigationMenuList className="gap-2">
-          <NavigationMenuItem>
+          {routes.map((item) => (
+            <NavigationMenuItem>
+              <Button
+                variant="ghost"
+                className="dark:text-white dark:text-white/80 font-normal text-xl"
+              >
+                <Link href={`${item.href}`}>{item.title}</Link>
+              </Button>
+            </NavigationMenuItem>
+          ))}
+          {/* <NavigationMenuItem>
             <Button
               variant="ghost"
               className="dark:text-white dark:text-white/80 font-normal text-xl"
@@ -89,7 +99,7 @@ const Header: React.FC<HeaderProps> = (className) => {
             >
               <Link href={"/skills"}>Skills</Link>
             </Button>
-          </NavigationMenuItem>
+          </NavigationMenuItem> */}
         </NavigationMenuList>
       </NavigationMenu>
       <aside className="flex w-full gap-2 justify-end items-center">
@@ -119,18 +129,13 @@ const Header: React.FC<HeaderProps> = (className) => {
           <DropdownMenuContent className="w-32 justify-right">
             <DropdownMenuLabel>Homepage</DropdownMenuLabel>
             <DropdownMenuGroup>
-              <DropdownMenuItem>
-                <Link href={"/intro"}>Intro</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link href={"/about-me"}>About Me</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link href={"/skills"}>Skills</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link href={"/contact"}>Contact</Link>
-              </DropdownMenuItem>
+              {routes.map((item) => (
+                <DropdownMenuItem>
+                  <Link href={`${item.href}`} className="text-white">
+                    {item.title}
+                  </Link>
+                </DropdownMenuItem>
+              ))}
             </DropdownMenuGroup>
           </DropdownMenuContent>
         </DropdownMenu>
