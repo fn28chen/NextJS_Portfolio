@@ -80,7 +80,10 @@ const Header: React.FC<HeaderProps> = (className) => {
       <NavigationMenu className="hidden md:block">
         <NavigationMenuList className="gap-2">
           {routes.map((item) => (
-            <NavigationMenuItem>
+            <NavigationMenuItem
+              key={item.title}
+              className={`flex flex-col items-center`}
+            >
               <Button
                 variant="ghost"
                 onClick={() => {
@@ -128,7 +131,9 @@ const Header: React.FC<HeaderProps> = (className) => {
             <DropdownMenuLabel>Homepage</DropdownMenuLabel>
             <DropdownMenuGroup>
               {routes.map((item) => (
-                <DropdownMenuItem>
+                <DropdownMenuItem
+                  key={item.title}
+                >
                   <Link href={`${item.href}`} className="text-white">
                     {item.title}
                   </Link>
