@@ -21,12 +21,6 @@ export const Main_Stack = [
     height: 66,
   },
   {
-    skill_name: "React",
-    Image: "/react.png",
-    width: 66,
-    height: 66,
-  },
-  {
     skill_name: "NextJS",
     Image: "/next.png",
     width: 66,
@@ -41,12 +35,6 @@ export const Main_Stack = [
   {
     skill_name: "ShadCN UI",
     Image: "/shadcn.png",
-    width: 66,
-    height: 66,
-  },
-  {
-    skill_name: "ExpressJS",
-    Image: "/express.png",
     width: 66,
     height: 66,
   },

@@ -8,7 +8,7 @@ import {
 } from "../../lib/constants";
 import React from "react";
 import {
-  StackDataProvider,  
+  StackDataProvider,
   SkillDataProvider,
 } from "../../components/global/skill-data-provider";
 import { motion } from "framer-motion";
@@ -27,14 +27,16 @@ const Skills = () => {
       className={`flex flex-col items-center justify-center mt-20 px-20 w-full z-[20]`}
     >
       <motion.div
-        variants={slideInFromTop(0)}
+        variants={slideInFromTop(0.5)}
         className={`Welcome-box py-2 px-4 border border-green-500 opacity-[0.9]`}
       >
         <SparklesIcon className={`h-5 w-5 text-green-500 inline-block mr-2`} />
         <h1 className={`text-[14px] text-washed-blue-400`}>Skills</h1>
       </motion.div>
-      <motion.div 
-      className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
+      <motion.p variants={delay(1)} className={`px-4 py-4`}>
+        My Main Stack
+      </motion.p>
+      <motion.div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
         {Main_Stack.map((image, index) => (
           <StackDataProvider
             key={index}
@@ -45,8 +47,10 @@ const Skills = () => {
           />
         ))}
       </motion.div>
-      <motion.div 
-      className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
+      <motion.p variants={delay(3)} className={`px-4 py-4`}>
+        Programming Language
+      </motion.p>
+      <motion.div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
         {Lang.map((image, index, array) => (
           <SkillDataProvider
             key={index}
@@ -57,8 +61,10 @@ const Skills = () => {
           />
         ))}
       </motion.div>
-      <motion.div
-      className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
+      <motion.p variants={delay(3)} className={`px-4 py-4`}>
+        Front-End Frameworks
+      </motion.p>
+      <motion.div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
         {Frontend_skill.map((image, index) => (
           <SkillDataProvider
             key={index}
@@ -69,8 +75,10 @@ const Skills = () => {
           />
         ))}
       </motion.div>
-      <motion.div
-      className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
+      <motion.p variants={delay(3)} className={`px-4 py-4`}>
+        Back-End Frameworks
+      </motion.p>
+      <motion.div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
         {Backend_skill.map((image, index, array) => (
           <SkillDataProvider
             key={index}
@@ -81,8 +89,10 @@ const Skills = () => {
           />
         ))}
       </motion.div>
-      <motion.div
-      className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
+      <motion.p variants={delay(3)} className={`px-4 py-4`}>
+        Database and ORM
+      </motion.p>
+      <motion.div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
         {DB.map((image, index) => (
           <SkillDataProvider
             key={index}
