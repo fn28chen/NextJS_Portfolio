@@ -34,6 +34,12 @@ import { BsTwitterX } from "react-icons/bs";
 import { FaLinkedin } from "react-icons/fa";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 
+import { AiFillHome } from "react-icons/ai";
+import { IoPersonOutline } from "react-icons/io5";
+import { MdOutlineBiotech } from "react-icons/md";
+import { PiProjectorScreenChartDuotone } from "react-icons/pi";
+import { RiContactsBook2Line } from "react-icons/ri";
+
 import {
   DropdownMenuGroup,
   DropdownMenuPortal,
@@ -43,9 +49,15 @@ import {
 } from "@radix-ui/react-dropdown-menu";
 
 const routes = [
-  { title: "Intro", href: "/intro" },
-  { title: "About Me", href: "/about-me" },
-  { title: "Skills", href: "/skills" },
+  { title: "Intro", logo: <AiFillHome />, href: "intro" },
+  { title: "About Me", logo: <IoPersonOutline />, href: "about-me" },
+  { title: "Skills", logo: <MdOutlineBiotech />, href: "skills" },
+  {
+    title: "Projects",
+    logo: <PiProjectorScreenChartDuotone />,
+    href: "project",
+  },
+  { title: "Contact", logo: <RiContactsBook2Line />, href: "contact" },
 ];
 
 interface HeaderProps {
@@ -54,6 +66,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = (className) => {
   const [path, setPath] = useState("intro");
+  console.log(path);
   return (
     <header
       className={`bg-black bg-opacity-50 py-2 fixed top-0 z-50 w-full px-12 flex justify-between items-center text-[20px] ${className}`}
@@ -70,36 +83,21 @@ const Header: React.FC<HeaderProps> = (className) => {
             <NavigationMenuItem>
               <Button
                 variant="ghost"
-                className="dark:text-white dark:text-white/80 font-normal text-xl"
+                onClick={() => {
+                  setPath(item.href);
+                }}
+                className={`dark:text-white dark:text-white/80 font-normal text-xl`}
               >
-                <Link href={`${item.href}`}>{item.title}</Link>
+                <Link
+                  href={`${item.href}`}
+                  className={`flex flex-col items-center`}
+                >
+                  <p className={`flex flex-row`}>{item.logo}</p>
+                  <p className={`text-[12px]`}>{item.title}</p>
+                </Link>
               </Button>
             </NavigationMenuItem>
           ))}
-          {/* <NavigationMenuItem>
-            <Button
-              variant="ghost"
-              className="dark:text-white dark:text-white/80 font-normal text-xl"
-            >
-              <Link href={"/intro"}>Intro</Link>
-            </Button>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <Button
-              variant="ghost"
-              className="dark:text-white dark:text-white/80 font-normal text-xl"
-            >
-              <Link href={"/about-me"}>About Me</Link>
-            </Button>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <Button
-              variant="ghost"
-              className="dark:text-white dark:text-white/80 font-normal text-xl"
-            >
-              <Link href={"/skills"}>Skills</Link>
-            </Button>
-          </NavigationMenuItem> */}
         </NavigationMenuList>
       </NavigationMenu>
       <aside className="flex w-full gap-2 justify-end items-center">

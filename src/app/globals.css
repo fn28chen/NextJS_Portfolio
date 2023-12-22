@@ -109,6 +109,19 @@
   }
 }
 
+@keyframes slide-reverse {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-reverse {
+  animation: 15s slide-reverse linear infinite;
+}
+
 .animate-slide {
   animation: 15s slide linear infinite;
 }

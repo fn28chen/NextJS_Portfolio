@@ -1,27 +1,24 @@
 "use client";
+import {
+  Backend_skill,
+  DB,
+  Frontend_skill,
+  Lang,
+  Main_Stack,
+} from "../../lib/constants";
 import React from "react";
+import {
+  StackDataProvider,  
+  SkillDataProvider,
+} from "../../components/global/skill-data-provider";
 import { motion } from "framer-motion";
-import { SparklesIcon } from "@heroicons/react/20/solid";
-
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-
-import {
+  delay,
   slideInFromLeft,
   slideInFromRight,
   slideInFromTop,
 } from "../../utils/motion";
-
-import HeroContent from "../intro/hero-content";
-import { frameworks } from "@/lib/constants";
-import Image from "next/image";
-
+import { SparklesIcon } from "@heroicons/react/20/solid";
 const Skills = () => {
   return (
     <motion.div
@@ -30,57 +27,72 @@ const Skills = () => {
       className={`flex flex-col items-center justify-center mt-20 px-20 w-full z-[20]`}
     >
       <motion.div
-        variants={slideInFromTop(0.5)}
+        variants={slideInFromTop(0)}
         className={`Welcome-box py-2 px-4 border border-green-500 opacity-[0.9]`}
       >
         <SparklesIcon className={`h-5 w-5 text-green-500 inline-block mr-2`} />
         <h1 className={`text-[14px] text-washed-blue-400`}>Skills</h1>
       </motion.div>
-      <div
-        className="overflow-hidden flex 
-        after:absolute
-        after:content[''] 
-        after:dark:from-brand-dark 
-        after:to-transparent 
-        after:from-background 
-        after:bg-gradient-to-l 
-        after:right-0 
-        after:bottom-0
-        after:top-0 
-        after:w-20 
-        after:z-10
-        before:absolute
-        before:content[''] 
-        before:dark:from-brand-dark 
-        before:to-transparent 
-        before:from-background 
-        before:bg-gradient-to-r 
-        before:right-0 
-        before:top-0
-        before:bottom-0 
-        before:w-20 
-        before:z-10
-        "
-      >
-        {[...Array(2)].map((arr) => (
-          <div key={arr} className={`flex flex-nowrap animate-slide`}>
-            {frameworks.map((framework) => (
-              <div
-                key={framework.alt}
-                className={`relative w-[200px] m-20 shrink-0 flex items-center`}
-              >
-                <Image
-                  src={framework.logo}
-                  alt={framework.alt}
-                  width={100}
-                  height={100}
-                  className="object-contain max-w-none"
-                />
-              </div>
-            ))}
-          </div>
+      <motion.div 
+      className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
+        {Main_Stack.map((image, index) => (
+          <StackDataProvider
+            key={index}
+            src={image.Image}
+            width={image.width}
+            height={image.height}
+            index={index}
+          />
         ))}
-      </div>
+      </motion.div>
+      <motion.div 
+      className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
+        {Lang.map((image, index, array) => (
+          <SkillDataProvider
+            key={index}
+            src={image.Image}
+            width={image.width}
+            height={image.height}
+            index={array.length - index - 1}
+          />
+        ))}
+      </motion.div>
+      <motion.div
+      className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
+        {Frontend_skill.map((image, index) => (
+          <SkillDataProvider
+            key={index}
+            src={image.Image}
+            width={image.width}
+            height={image.height}
+            index={index}
+          />
+        ))}
+      </motion.div>
+      <motion.div
+      className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
+        {Backend_skill.map((image, index, array) => (
+          <SkillDataProvider
+            key={index}
+            src={image.Image}
+            width={image.width}
+            height={image.height}
+            index={array.length - index - 1}
+          />
+        ))}
+      </motion.div>
+      <motion.div
+      className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
+        {DB.map((image, index) => (
+          <SkillDataProvider
+            key={index}
+            src={image.Image}
+            width={image.width}
+            height={image.height}
+            index={index}
+          />
+        ))}
+      </motion.div>
     </motion.div>
   );
 };
