@@ -15,12 +15,6 @@ export const Socials = [
 
 export const Main_Stack = [
   {
-    skill_name: "TypeScript",
-    Image: "/ts.png",
-    width: 66,
-    height: 66,
-  },
-  {
     skill_name: "NextJS",
     Image: "/next.png",
     width: 66,
@@ -29,6 +23,12 @@ export const Main_Stack = [
   {
     skill_name: "TailwindCSS",
     Image: "/tailwind.png",
+    width: 66,
+    height: 66,
+  },
+  {
+    skill_name: "Framer Motion",
+    Image: "/framer.png",
     width: 66,
     height: 66,
   },
@@ -43,14 +43,19 @@ export const Main_Stack = [
     Image: "/drizzle.png",
     width: 66,
     height: 66,
-  }
-
+  },
+  {
+    skill_name: "T3",
+    Image: "/t3.png",
+    width: 66,
+    height: 66,
+  },
 ]
 
 export const Lang = [
   {
-    skill_name: "Html 5",
-    Image: "/html.png",
+    skill_name: "Cpp",
+    Image: "/cpp.png",
     width: 66,
     height: 66,
   },
@@ -94,17 +99,17 @@ export const Frontend_skill = [
     height: 66,
   },
   {
-    skill_name: "Material UI",
-    Image: "/mui.png",
-    width: 66,
-    height: 66,
-  },
-  {
     skill_name: "ShadCN UI",
     Image: "/shadcn.png",
     width: 66,
     height: 66,
-  }
+  },
+  {
+    skill_name: "Framer Motion",
+    Image: "/framer.png",
+    width: 66,
+    height: 66,
+  },
 ];
 
 export const Backend_skill = [
@@ -129,6 +134,12 @@ export const Backend_skill = [
   {
     skill_name: "NestJS",
     Image: "/nest.svg",
+    width: 66,
+    height: 66,
+  },
+  {
+    skill_name: "tRPC",
+    Image: "/trpc.svg",
     width: 66,
     height: 66,
   },
