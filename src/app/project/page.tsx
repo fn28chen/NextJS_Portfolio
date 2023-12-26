@@ -20,29 +20,97 @@ import {
 
 import HeroContent from "../intro/hero-content";
 import Image from "next/image";
+import Link from "next/link";
 
 const Projects = [
-    {
-        title: 'Prodigy Cypress Website',
-        href: `https://github.com/cao28cao/prodigy-cypress`,
-        description: ``,
-    },
-    {
-        title: `Twitter T3-stack clone`,
-        href: `https://t3-app-rho-three.vercel.app/`,
-        description: ``,
-    },
-    {
-        title: `Blog`,
-        href: `https://blog-ketket.vercel.app/`,
-        description: ``,   
-    },
-    {
-        title: `Pro Chat`,
-        href: `https://oversimplifiedteam7.netlify.app/`,
-        description: ``,
-    },
-]
+  {
+    title: "Prodigy Cypress Website",
+    href: `https://github.com/cao28cao/prodigy-cypress`,
+    description: ``,
+    techStack: [
+      `NextJS`,
+      `TailwindCSS`,
+      `ShadCN`,
+      `TypeScript`,
+      `Drizzle`,
+      `SupaBase`,
+    ],
+  },
+  {
+    title: `Twitter T3-stack clone`,
+    href: `https://t3-app-rho-three.vercel.app/`,
+    description: ``,
+    techStack: [`NextJS`, `TailwindCSS`, `TypeScript`, `Prisma`, `MySQL`],
+  },
+  {
+    title: `Blog`,
+    href: `https://blog-ketket.vercel.app/`,
+    description: ``,
+    techStack: [`NextJS`, `TailwindCSS`, `FramerMotion`, `Prisma`, `MySQL`, `Sanity`],
+  },
+  {
+    title: `Pro Chat`,
+    href: `https://oversimplifiedteam7.netlify.app/`,
+    description: ``,
+    techStack: [
+      `ReactJS`,
+      `TailwindCSS`,
+      `TypeScript`,
+      `Python`,
+      `SocketIO`,
+      `MongoDB`,
+    ],
+  },
+  {
+    title: `NEXTlify`,
+    href: `https://nextlify-iota.vercel.app/`,
+    description: ``,
+    techStack: [`NextJS`, `TailwindCSS`, `TypeScript`, `SupaBase`],
+  },
+  {
+    title: `Football Blog`,
+    href: `https://blog-football.vercel.app/`,
+    description: ``,
+    techStack: [`NextJS`, `TailwindCSS`, `JSONserver`],
+  },
+];
+
+function getFrameworkImageLink(framework: string) {
+  const frameworkImageLink: { [key: string]: string } = {
+    NextJS: `/next.png`,
+    TailwindCSS: `/tailwind.png`,
+    ShadCN: `/shadcn.png`,
+    TypeScript: `/ts.png`,
+    Drizzle: `/drizzle.png`,
+    Supabase: `/supabase.png`,
+    Prisma: `/prisma.webp`,
+    MySQL: `/mysql.png`,
+    FramerMotion: `/framer.png`,
+    ReactJS: `/react.png`,
+    Python: `/python.png`,
+    SocketIO: `/socket.png`,
+    MongoDB: `/mongodb.webp`,
+    JSONServer: `/jsonserver.png`,
+    SupaBase: `/supabase.png`,
+    Sanity: `/sanity.png`,
+    JSONserver: `/jsonserver.png`,
+  };
+
+  return frameworkImageLink[framework];
+}
+
+const FrameworkImage = ({ framework }: { framework: string }) => {
+  const src = getFrameworkImageLink(framework);
+  return (
+    <motion.div
+      className={`flex justify-center items-center gap-2`}
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.9 }}
+    >
+      <Image src={src} width={25} height={25} alt={`${framework}`} />
+    </motion.div>
+  );
+};
 
 const Skills = () => {
   return (
@@ -58,7 +126,58 @@ const Skills = () => {
         <SparklesIcon className={`h-5 w-5 text-green-500 inline-block mr-2`} />
         <h1 className={`text-[14px] text-washed-blue-400`}>Projects</h1>
       </motion.div>
-      
+      <motion.div
+        className={`
+        grid grid-cols-1
+        sm:grid-cols-2 
+        gap-6 mt-6 text-sm sm:text-md md:text-base text-bold text-slate-100 z-10`}
+      >
+        {Projects.map((item, index) => (
+          <motion.div
+            key={index}
+            variants={
+              index % 2 === 0
+                ? slideInFromLeft(0.75 + (index + 1) * 0.2)
+                : slideInFromRight(0.75 + (index + 1) * 0.2)
+            }
+            className={`${
+              index % 2 === 0 ? `sm:mt-0 lg:mt-0 ` : `sm:mt-10 lg:mt-10 `
+            }
+          flex gap-6
+          text-bold text-slate-100 
+          z-10 max-w-[300px] h-[220px]
+          lg:flex-row lg:max-w-[400px]`}
+          >
+            <Card className={`min-w-[250px]`}>
+              <CardHeader>
+                <CardTitle className={`text-base md:text-lg lg:text-2xl`}>
+                  <Link
+                    href={item.href}
+                    target={`_blank`}
+                    className={`text-base md:text-lg lg:text-2xl hover:text-green-500`}
+                  >
+                    <span>{item.title}</span>
+                  </Link>
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription
+                  className={`text-justify text-[12px] md:text-[14px]`}
+                >
+                  {item.description}
+                </CardDescription>
+              </CardContent>
+              <CardContent>
+                <div className={`flex flex-row gap-2`}>
+                  {item.techStack?.map((tech, index) => (
+                    <FrameworkImage key={index} framework={tech}/>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
+        ))}
+      </motion.div>
     </motion.div>
   );
 };
