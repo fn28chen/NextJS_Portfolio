@@ -26,7 +26,7 @@ const Projects = [
   {
     title: "Prodigy Cypress Website",
     href: `https://github.com/cao28cao/prodigy-cypress`,
-    description: ``,
+    description: `This project will be released soon.`,
     techStack: [
       `NextJS`,
       `TailwindCSS`,
@@ -39,19 +39,26 @@ const Projects = [
   {
     title: `Twitter T3-stack clone`,
     href: `https://t3-app-rho-three.vercel.app/`,
-    description: ``,
+    description: `A Twitter clone with local storage as a first-time I use T3-stack as a full-stack framework. That's can use as a playground in a group.`,
     techStack: [`NextJS`, `TailwindCSS`, `TypeScript`, `Prisma`, `MySQL`],
   },
   {
     title: `Blog`,
     href: `https://blog-ketket.vercel.app/`,
-    description: ``,
-    techStack: [`NextJS`, `TailwindCSS`, `FramerMotion`, `Prisma`, `MySQL`, `Sanity`],
+    description: `This is a blog build for Facebook Page for their 12 Cung Hoang Dao Series. It is a blog that allows users to read their daily horoscope and also allows users to read their daily fortune.`,
+    techStack: [
+      `NextJS`,
+      `TailwindCSS`,
+      `FramerMotion`,
+      `Prisma`,
+      `MySQL`,
+      `Sanity`,
+    ],
   },
   {
     title: `Pro Chat`,
     href: `https://oversimplifiedteam7.netlify.app/`,
-    description: ``,
+    description: `Pro Chat is a group project that I built in the 5th semester with my collaborators. It is a chat application that allows users to chat with each other in real-time.`,
     techStack: [
       `ReactJS`,
       `TailwindCSS`,
@@ -70,7 +77,7 @@ const Projects = [
   {
     title: `Football Blog`,
     href: `https://blog-football.vercel.app/`,
-    description: ``,
+    description: `That's my simple blog about football and especially Bayern Munich, but it's not finished yet. I will update it soon.`,
     techStack: [`NextJS`, `TailwindCSS`, `JSONserver`],
   },
 ];
@@ -117,7 +124,7 @@ const Skills = () => {
     <motion.div
       initial="hidden"
       animate="visible"
-      className={`flex flex-col items-center justify-center mt-20 px-20 w-full z-[20]`}
+      className={`flex flex-col items-center justify-center mt-20 px-6 sm:px-20 w-full z-[20]`}
     >
       <motion.div
         variants={slideInFromTop(0.5)}
@@ -128,8 +135,7 @@ const Skills = () => {
       </motion.div>
       <motion.div
         className={`
-        grid grid-cols-1
-        sm:grid-cols-2 
+        grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3
         gap-6 mt-6 text-sm sm:text-md md:text-base text-bold text-slate-100 z-10`}
       >
         {Projects.map((item, index) => (
@@ -140,15 +146,13 @@ const Skills = () => {
                 ? slideInFromLeft(0.75 + (index + 1) * 0.2)
                 : slideInFromRight(0.75 + (index + 1) * 0.2)
             }
-            className={`${
-              index % 2 === 0 ? `sm:mt-0 lg:mt-0 ` : `sm:mt-10 lg:mt-10 `
-            }
+            className={`
           flex gap-6
           text-bold text-slate-100 
-          z-10 max-w-[300px] h-[220px]
-          lg:flex-row lg:max-w-[400px]`}
+          z-10 h-[220px]
+          lg:flex-row w-[300px]`}
           >
-            <Card className={`min-w-[250px]`}>
+            <Card className={`w-[300px] items-center justify-center`}>
               <CardHeader>
                 <CardTitle className={`text-base md:text-lg lg:text-2xl`}>
                   <Link
@@ -170,7 +174,7 @@ const Skills = () => {
               <CardContent>
                 <div className={`flex flex-row gap-2`}>
                   {item.techStack?.map((tech, index) => (
-                    <FrameworkImage key={index} framework={tech}/>
+                    <FrameworkImage key={index} framework={tech} />
                   ))}
                 </div>
               </CardContent>
