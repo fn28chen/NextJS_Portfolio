@@ -39,8 +39,8 @@ const info = [
     description: `Now I work as a freelancer Front-End Developer. I am looking for a job. Addition, I work part-time as a channel leader of Discord HLV Online - that's a channel with content around football analysis and tactics.`,
   },
   {
-    title: `Education`,
-    description: `Now I am a 4-year student at the Post Telecommunication Institute of Technology. My major is Electronic Telecommunications. I have a top-class GPA with top 1% of the school.`,
+    title: `More...`,
+    description: `I'm interested in something new like T3-stack, shadcnUI, trpc or something else. I want to learn new things whenever my schedule allow me to do this.`,
   },
 ];
 

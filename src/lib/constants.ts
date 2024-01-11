@@ -13,45 +13,6 @@ export const Socials = [
   },
 ];
 
-export const Main_Stack = [
-  {
-    skill_name: "NextJS",
-    Image: "/next.png",
-    width: 66,
-    height: 66,
-  },
-  {
-    skill_name: "TailwindCSS",
-    Image: "/tailwind.png",
-    width: 66,
-    height: 66,
-  },
-  {
-    skill_name: "Framer Motion",
-    Image: "/framer.png",
-    width: 66,
-    height: 66,
-  },
-  {
-    skill_name: "ShadCN UI",
-    Image: "/shadcn.png",
-    width: 66,
-    height: 66,
-  },
-  {
-    skill_name: "Drizzle",
-    Image: "/drizzle.png",
-    width: 66,
-    height: 66,
-  },
-  {
-    skill_name: "T3",
-    Image: "/t3.png",
-    width: 66,
-    height: 66,
-  },
-]
-
 export const Lang = [
   {
     skill_name: "Cpp",
@@ -176,4 +137,43 @@ export const DB = [
     width: 66,
     height: 66,
   }
-]
+];
+
+export const Main_Stack = [
+  {
+    skill_name: "NextJS",
+    Image: "/next.png",
+    width: 66,
+    height: 66,
+  },
+  {
+    skill_name: "TailwindCSS",
+    Image: "/tailwind.png",
+    width: 66,
+    height: 66,
+  },
+  {
+    skill_name: "Framer Motion",
+    Image: "/framer.png",
+    width: 66,
+    height: 66,
+  },
+  {
+    skill_name: "ShadCN UI",
+    Image: "/shadcn.png",
+    width: 66,
+    height: 66,
+  },
+  {
+    skill_name: "Drizzle",
+    Image: "/drizzle.png",
+    width: 66,
+    height: 66,
+  },
+  {
+    skill_name: "T3",
+    Image: "/t3.png",
+    width: 66,
+    height: 66,
+  },
+];

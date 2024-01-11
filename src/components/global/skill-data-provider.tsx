@@ -30,7 +30,7 @@ const StackDataProvider = ({ src, width, height, index }: Props) => {
         variants={imageVariants}
         animate={inView ? "visible" : "hidden"}
         custom={index}
-        transition={{ delay: 1.5 + index * animationDelay }}
+        transition={{ delay: 3.5 + index * animationDelay }}
         >
         <Image src={src} width={width} height={height} alt="skill image" />
         </motion.div>
@@ -55,7 +55,7 @@ const SkillDataProvider = ({ src, width, height, index }: Props) => {
       variants={imageVariants}
       animate={inView ? "visible" : "hidden"}
       custom={index}
-      transition={{ delay: 4 + index * animationDelay }}
+      transition={{ delay: 1.5 + index * animationDelay }}
     >
       <Image src={src} width={width} height={height} alt="skill image" />
     </motion.div>

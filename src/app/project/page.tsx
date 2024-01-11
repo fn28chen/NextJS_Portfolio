@@ -16,6 +16,7 @@ import {
   slideInFromLeft,
   slideInFromRight,
   slideInFromTop,
+  slideInFromBot,
 } from "../../utils/motion";
 
 import HeroContent from "../intro/hero-content";
@@ -35,6 +36,18 @@ const Projects = [
       `Drizzle`,
       `SupaBase`,
     ],
+  },
+  {
+    title: `T3 Spammer Emoji`,
+    href: `https://t3-git.vercel.app/`,
+    description: ``,
+    techStack: [`NextJS`, `TailwindCSS`, `ShadCN`, `TypeScript`, `Prisma`, `PostgreSQL`, `T3`],
+  },
+  {
+    title: `Reading List`,
+    href: `https://blog-football.vercel.app/`,
+    description: `That's my reading list with API from open-library. It's use NextJS, TailwindCSS, TypeScript and shadcnUI as Front-end, axios as API client and use open-library API as a data source.`,
+    techStack: [`NextJS`, `TailwindCSS`, `TypeScript`, `ShadCN`],
   },
   {
     title: `Twitter T3-stack clone`,
@@ -68,18 +81,6 @@ const Projects = [
       `MongoDB`,
     ],
   },
-  {
-    title: `NEXTlify`,
-    href: `https://nextlify-iota.vercel.app/`,
-    description: ``,
-    techStack: [`NextJS`, `TailwindCSS`, `TypeScript`, `SupaBase`],
-  },
-  {
-    title: `Football Blog`,
-    href: `https://blog-football.vercel.app/`,
-    description: `That's my simple blog about football and especially Bayern Munich, but it's not finished yet. I will update it soon.`,
-    techStack: [`NextJS`, `TailwindCSS`, `JSONserver`],
-  },
 ];
 
 function getFrameworkImageLink(framework: string) {
@@ -101,6 +102,8 @@ function getFrameworkImageLink(framework: string) {
     SupaBase: `/supabase.png`,
     Sanity: `/sanity.png`,
     JSONserver: `/jsonserver.png`,
+    T3: `/t3.png`,
+    PostgreSQL: `/postger.png`,
   };
 
   return frameworkImageLink[framework];
@@ -143,8 +146,8 @@ const Skills = () => {
             key={index}
             variants={
               index % 2 === 0
-                ? slideInFromLeft(0.75 + (index + 1) * 0.2)
-                : slideInFromRight(0.75 + (index + 1) * 0.2)
+                ? slideInFromTop(0.75 + (index + 1) * 0.2)
+                : slideInFromBot(0.75 + (index + 1) * 0.2)
             }
             className={`
           flex gap-6
