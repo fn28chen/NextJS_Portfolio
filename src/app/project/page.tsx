@@ -45,7 +45,7 @@ const Projects = [
   },
   {
     title: `Reading List`,
-    href: `https://blog-football.vercel.app/`,
+    href: `https://reading-list-opal.vercel.app/`,
     description: `That's my reading list with API from open-library. It's use NextJS, TailwindCSS, TypeScript and shadcnUI as Front-end, axios as API client and use open-library API as a data source.`,
     techStack: [`NextJS`, `TailwindCSS`, `TypeScript`, `ShadCN`],
   },
