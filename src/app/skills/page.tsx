@@ -59,7 +59,7 @@ const Skills = () => {
           </motion.div>
           <motion.div variants={delay(1)}>
             <motion.p className={`px-4 py-4 text-center`}>
-              Front-End Frameworks
+              Front-End Frameworks/Tools
             </motion.p>
             <motion.div
               variants={delay(1)}
