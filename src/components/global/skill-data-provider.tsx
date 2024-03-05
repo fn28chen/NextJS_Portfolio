@@ -37,7 +37,7 @@ const StackDataProvider = ({ src, width, height, index }: Props) => {
         width={width}
         height={height}
         alt="skill image"
-        className="sm:w-10 sm:h-10 md:w-13 md:h-13"
+        className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12"
       />
     </motion.div>
   );

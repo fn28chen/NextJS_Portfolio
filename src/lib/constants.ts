@@ -2,14 +2,17 @@ export const Socials = [
   {
     name: "Discord",
     src: "/instagram.svg",
+    link: "https://discord.com/users/590144693338243092",
   },
   {
     name: "Facebook",
     src: "/facebook.svg",
+    link: "https://www.facebook.com/j4son.8.t1nda11/",
   },
   {
     name: "Instagram",
     src: "/discord.svg",
+    link: "https://www.instagram.com/niccolo.28.machiavelli/",
   },
 ];
 
@@ -19,24 +22,28 @@ export const Lang = [
     Image: "/cpp.png",
     width: 66,
     height: 66,
+    link: "https://www.cplusplus.com/",
   },
   {
     skill_name: "Css",
     Image: "/css.png",
     width: 66,
     height: 66,
+    link: "https://developer.mozilla.org/en-US/docs/Web/CSS",
   },
   {
     skill_name: "JavaScript",
     Image: "/js.png",
     width: 66,
     height: 66,
+    link: "https://www.javascript.com/",
   },
   {
     skill_name: "TypeScript",
     Image: "/ts.png",
     width: 66,
     height: 66,
+    link: "https://www.typescriptlang.org/",
   },
 ];
 
@@ -46,24 +53,28 @@ export const Frontend_skill = [
     Image: "/react.png",
     width: 66,
     height: 66,
+    link: "https://react.dev/",
   },
   {
     skill_name: "TailwindCSS",
     Image: "/tailwind.png",
     width: 66,
     height: 66,
+    link: "https://tailwindcss.com/",
   },
   {
     skill_name: "ShadCN UI",
     Image: "/shadcn.png",
     width: 66,
     height: 66,
+    link: "https://ui.shadcn.com/",
   },
   {
     skill_name: "Framer Motion",
     Image: "/framer.png",
     width: 66,
     height: 66,
+    link: "https://www.framer.com/motion/",
   },
 ];
 
