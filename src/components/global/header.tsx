@@ -34,30 +34,52 @@ import { BsTwitterX } from "react-icons/bs";
 import { FaLinkedin } from "react-icons/fa";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 
-import { AiFillHome } from "react-icons/ai";
-import { IoPersonOutline } from "react-icons/io5";
-import { MdOutlineBiotech } from "react-icons/md";
-import { PiProjectorScreenChartDuotone } from "react-icons/pi";
-import { RiContactsBook2Line } from "react-icons/ri";
-
 import {
-  DropdownMenuGroup,
-  DropdownMenuPortal,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
-} from "@radix-ui/react-dropdown-menu";
+  IoHomeOutline,
+  IoHomeSharp,
+  IoPersonOutline,
+  IoPersonSharp,
+  IoBarChartOutline,
+  IoBarChartSharp,
+  IoAppsOutline,
+  IoApps,
+  IoAddCircleOutline,
+  IoAddCircleSharp,
+} from "react-icons/io5";
+
+import { DropdownMenuGroup } from "@radix-ui/react-dropdown-menu";
 
 const routes = [
-  { title: "Intro", logo: <AiFillHome />, href: "intro" },
-  { title: "About Me", logo: <IoPersonOutline />, href: "about-me" },
-  { title: "Skills", logo: <MdOutlineBiotech />, href: "skills" },
+  {
+    title: "Intro",
+    logo: <IoHomeOutline />,
+    logo_active: <IoHomeSharp />,
+    href: "intro",
+  },
+  {
+    title: "About Me",
+    logo: <IoPersonOutline />,
+    logo_active: <IoPersonSharp />,
+    href: "about-me",
+  },
+  {
+    title: "Skills",
+    logo: <IoBarChartOutline />,
+    logo_active: <IoBarChartSharp />,
+    href: "skills",
+  },
   {
     title: "Projects",
-    logo: <PiProjectorScreenChartDuotone />,
+    logo: <IoAppsOutline />,
+    logo_active: <IoApps />,
     href: "project",
   },
-  { title: "Contact", logo: <RiContactsBook2Line />, href: "contact" },
+  {
+    title: "Contact",
+    logo: <IoAddCircleOutline />,
+    logo_active: <IoAddCircleSharp />,
+    href: "contact",
+  },
 ];
 
 interface HeaderProps {
@@ -89,13 +111,18 @@ const Header: React.FC<HeaderProps> = (className) => {
                 onClick={() => {
                   setPath(item.href);
                 }}
-                className={`dark:text-white dark:text-white/80 font-normal text-xl`}
+                className={`
+                ${path === item.href ? "text-green" : "text-white/60"}
+                font-normal text-xl
+                `}
               >
                 <Link
                   href={`${item.href}`}
                   className={`flex flex-col items-center`}
                 >
-                  <p className={`flex flex-row`}>{item.logo}</p>
+                  <p className={`flex flex-row`}>
+                    {path === item.href ? item.logo_active : item.logo}
+                  </p>
                   <p className={`text-[12px]`}>{item.title}</p>
                 </Link>
               </Button>
@@ -131,9 +158,7 @@ const Header: React.FC<HeaderProps> = (className) => {
             <DropdownMenuLabel>Homepage</DropdownMenuLabel>
             <DropdownMenuGroup>
               {routes.map((item) => (
-                <DropdownMenuItem
-                  key={item.title}
-                >
+                <DropdownMenuItem key={item.title}>
                   <Link href={`${item.href}`} className="text-white">
                     {item.title}
                   </Link>

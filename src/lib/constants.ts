@@ -48,12 +48,6 @@ export const Frontend_skill = [
     height: 66,
   },
   {
-    skill_name: "NextJS",
-    Image: "/next.png",
-    width: 66,
-    height: 66,
-  },
-  {
     skill_name: "TailwindCSS",
     Image: "/tailwind.png",
     width: 66,
@@ -83,12 +77,6 @@ export const Backend_skill = [
   {
     skill_name: "ExpressJS",
     Image: "/express.png",
-    width: 66,
-    height: 66,
-  },
-  {
-    skill_name: "NextJS",
-    Image: "/next.png",
     width: 66,
     height: 66,
   },
