@@ -36,10 +36,12 @@ const Skills = () => {
         <SparklesIcon className={`h-5 w-5 text-green-500 inline-block mr-2`} />
         <h1 className={`text-[14px] text-washed-blue-400`}>Skills</h1>
       </motion.div>
-      <div className="flex flex-row gap-32 items-center justify-center">
+      <div className="flex flex-col lg:flex-row gap-32 items-center justify-center">
         <div className="items-center justify-center">
           <motion.div variants={delay(1)}>
-            <motion.p className={`px-4 py-4 text-center`}>Programming Language</motion.p>
+            <motion.p className={`px-4 py-4 text-center`}>
+              Programming Language
+            </motion.p>
             <motion.div
               variants={delay(1)}
               className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center"
@@ -56,7 +58,9 @@ const Skills = () => {
             </motion.div>
           </motion.div>
           <motion.div variants={delay(1)}>
-            <motion.p className={`px-4 py-4 text-center`}>Front-End Frameworks</motion.p>
+            <motion.p className={`px-4 py-4 text-center`}>
+              Front-End Frameworks
+            </motion.p>
             <motion.div
               variants={delay(1)}
               className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center"
@@ -73,7 +77,9 @@ const Skills = () => {
             </motion.div>
           </motion.div>
           <motion.div variants={delay(1)}>
-            <motion.p className={`px-4 py-4 text-center`}>Back-End Frameworks</motion.p>
+            <motion.p className={`px-4 py-4 text-center`}>
+              Back-End Frameworks
+            </motion.p>
             <motion.div
               variants={delay(1)}
               className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center"
@@ -90,7 +96,9 @@ const Skills = () => {
             </motion.div>
           </motion.div>
           <motion.div variants={delay(1)}>
-            <motion.p className={`px-4 py-4 text-center`}>Database and ORM</motion.p>
+            <motion.p className={`px-4 py-4 text-center`}>
+              Database and ORM
+            </motion.p>
             <motion.div
               variants={delay(1)}
               className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center"
