@@ -21,6 +21,7 @@ import HeroContent from "../intro/hero-content";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { LiaLongArrowAltRightSolid } from "react-icons/lia";
+import { useUpdatePath } from "@/lib/providers/path-provider";
 
 const info = [
   {
@@ -45,6 +46,8 @@ const info = [
 ];
 
 const AboutMe = () => {
+  const { setPath } = useUpdatePath();
+
   return (
     <motion.div
       initial="hidden"
@@ -95,12 +98,15 @@ const AboutMe = () => {
           </motion.div>
         ))}
       </motion.div>
-      {/* <motion.div
+      <motion.div
         variants={slideInFromLeft(2)}
         className={`flex flex-row items-center justify-center mt-10 mb-5 md:mt-20 md:px-20 w-full z-[20]`}
       >
         <Link href="/skills">
           <Button
+            onClick={() => {
+              setPath("/skills");
+            }}
             className={`hover:before:bg-redborder-red-500 relative h-[50px] w-40 overflow-hidden border border-green-500 bg-black px-3 text-green-500 shadow-2xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-green-500 before:transition-all before:duration-300 hover:text-white hover:shadow-green-500 hover:bg-black hover:before:left-0 hover:before:w-full 
             `}
           >
@@ -114,7 +120,7 @@ const AboutMe = () => {
             />
           </Button>
         </Link>
-      </motion.div> */}
+      </motion.div>
     </motion.div>
   );
 };

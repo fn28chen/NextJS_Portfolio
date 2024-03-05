@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useContext } from "react";
 import { motion } from "framer-motion";
 import { useRive } from "@rive-app/react-canvas";
 import {
@@ -12,6 +12,7 @@ import { LiaLongArrowAltRightSolid } from "react-icons/lia";
 
 import { Button } from "../../components/ui/button";
 import Link from "next/link";
+import { useUpdatePath } from "@/lib/providers/path-provider";
 
 function Simple() {
   const { rive, RiveComponent } = useRive({
@@ -28,6 +29,7 @@ function Simple() {
 }
 
 const HeroContent = () => {
+  const { setPath } = useUpdatePath();
   return (
     <motion.div
       initial="hidden"
@@ -69,17 +71,18 @@ const HeroContent = () => {
           variants={slideInFromLeft(1)}
           className={`text-sm md:text-lg lg:text-2xl text-gray-400 my-5 max-w-[600px] text-justify`}
         >
-          Hello, I{`'`}m Tr Phong - Dominik, a web designer and developer, I am a
-          person who is always curious about new things. Recently I am trying to
-          challenge myself by learning web development with ambition to become a
-          specialist.
+          Hello, I{`'`}m Tr Phong - Dominik, a web designer and developer, I am
+          a person who is always curious about new things. Recently I am trying
+          to challenge myself by learning web development with ambition to
+          become a specialist.
         </motion.p>
-        {/* <motion.div
+        <motion.div
           variants={slideInFromLeft(1)}
           className={`text-lg text-gray-400 my-5 max-w-[600px]`}
         >
           <Link href={`/about-me`} className={`group block`}>
             <Button
+              onClick={() => setPath("/about-me")}
               className="
               hover:before:bg-redborder-red-500 relative h-[50px] w-40 overflow-hidden border border-green-500 bg-black px-3 text-green-500 shadow-2xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-green-500 before:transition-all before:duration-300 hover:text-white hover:shadow-green-500 hover:bg-black hover:before:left-0 hover:before:w-full"
             >
@@ -93,7 +96,7 @@ const HeroContent = () => {
               />
             </Button>
           </Link>
-        </motion.div> */}
+        </motion.div>
       </div>
       <motion.div
         variants={slideInFromRight(1)}

@@ -48,37 +48,38 @@ import {
 } from "react-icons/io5";
 
 import { DropdownMenuGroup } from "@radix-ui/react-dropdown-menu";
+import { useUpdatePath } from "@/lib/providers/path-provider";
 
 const routes = [
   {
     title: "Intro",
     logo: <IoHomeOutline />,
     logo_active: <IoHomeSharp />,
-    href: "intro",
+    href: "/intro",
   },
   {
     title: "About Me",
     logo: <IoPersonOutline />,
     logo_active: <IoPersonSharp />,
-    href: "about-me",
+    href: "/about-me",
   },
   {
     title: "Skills",
     logo: <IoBarChartOutline />,
     logo_active: <IoBarChartSharp />,
-    href: "skills",
+    href: "/skills",
   },
   {
     title: "Projects",
     logo: <IoAppsOutline />,
     logo_active: <IoApps />,
-    href: "project",
+    href: "/project",
   },
   {
     title: "Contact",
     logo: <IoAddCircleOutline />,
     logo_active: <IoAddCircleSharp />,
-    href: "contact",
+    href: "/contact",
   },
 ];
 
@@ -87,8 +88,10 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = (className) => {
-  const [path, setPath] = useState("intro");
+  const { path, setPath } = useUpdatePath();
+
   console.log(path);
+
   return (
     <header
       className={`bg-black bg-opacity-50 py-2 fixed top-0 z-50 w-full px-12 flex justify-between items-center text-[20px] ${className}`}

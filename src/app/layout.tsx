@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/lib/providers/next-theme-provider";
 import StarsCanvas from "@/components/global/star-background";
 import Header from "@/components/global/header";
+import { PathProvider } from "@/lib/providers/path-provider";
 
 const font = Space_Grotesk({ subsets: ["latin"] });
 
@@ -17,16 +18,19 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+
   return (
     <html lang="en">
       <body
         className={`${font.className} bg-[#030014] overflow-y-scroll overflow-x-hidden`}
       >
-        <StarsCanvas />
-        <ThemeProvider attribute={`class`} defaultTheme={`dark`}>
-          <Header />
-          {children}
-        </ThemeProvider>
+        <PathProvider>
+          <StarsCanvas />
+          <ThemeProvider attribute={`class`} defaultTheme={`dark`}>
+            <Header />
+            {children}
+          </ThemeProvider>
+        </PathProvider>
       </body>
     </html>
   );
