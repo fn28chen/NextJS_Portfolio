@@ -74,7 +74,7 @@ const HeroContent = () => {
           challenge myself by learning web development with ambition to become a
           specialist.
         </motion.p>
-        <motion.div
+        {/* <motion.div
           variants={slideInFromLeft(1)}
           className={`text-lg text-gray-400 my-5 max-w-[600px]`}
         >
@@ -93,7 +93,7 @@ const HeroContent = () => {
               />
             </Button>
           </Link>
-        </motion.div>
+        </motion.div> */}
       </div>
       <motion.div
         variants={slideInFromRight(1)}

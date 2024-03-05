@@ -95,7 +95,7 @@ const AboutMe = () => {
           </motion.div>
         ))}
       </motion.div>
-      <motion.div
+      {/* <motion.div
         variants={slideInFromLeft(2)}
         className={`flex flex-row items-center justify-center mt-10 mb-5 md:mt-20 md:px-20 w-full z-[20]`}
       >
@@ -114,7 +114,7 @@ const AboutMe = () => {
             />
           </Button>
         </Link>
-      </motion.div>
+      </motion.div> */}
     </motion.div>
   );
 };
