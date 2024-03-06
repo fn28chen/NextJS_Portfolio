@@ -89,24 +89,28 @@ export const Backend_skill = [
     Image: "/node-js.png",
     width: 66,
     height: 66,
+    link: "https://nodejs.org/en/",
   },
   {
     skill_name: "ExpressJS",
     Image: "/express.png",
     width: 66,
     height: 66,
+    link: "https://expressjs.com/",
   },
   {
     skill_name: "NestJS",
     Image: "/nest.svg",
     width: 66,
     height: 66,
+    link: "https://nestjs.com/",
   },
   {
     skill_name: "tRPC",
     Image: "/trpc.svg",
     width: 66,
     height: 66,
+    link: "https://trpc.io/",
   },
 ];
 
@@ -116,30 +120,35 @@ export const DB = [
     Image: "/mongodb.webp",
     width: 40,
     height: 40,
+    link: "https://www.mongodb.com/",
   },
   {
     skill_name: "PostgresSQL",
     Image: "/postger.png",
     width: 66,
     height: 66,
+    link: "https://www.postgresql.org/",
   },
   {
     skill_name: "MySQL",
     Image: "/mysql.png",
     width: 66,
     height: 66,
+    link: "https://www.mysql.com/",
   },
   {
     skill_name: "Prisma",
     Image: "/prisma.webp",
     width: 66,
     height: 66,
+    link: "https://www.prisma.io/",
   },
   {
     skill_name: "Drizzle",
     Image: "/drizzle.png",
     width: 66,
     height: 66,
+    link: "https://orm.drizzle.team/",
   }
 ];
 
@@ -149,35 +158,41 @@ export const Main_Stack = [
     Image: "/next.png",
     width: 66,
     height: 66,
+    link: "https://nextjs.org/",
   },
   {
     skill_name: "TailwindCSS",
     Image: "/tailwind.png",
     width: 66,
     height: 66,
+    link: "https://tailwindcss.com/",
   },
   {
     skill_name: "Framer Motion",
     Image: "/framer.png",
     width: 66,
     height: 66,
+    link: "https://www.framer.com/motion/",
   },
   {
     skill_name: "ShadCN UI",
     Image: "/shadcn.png",
     width: 66,
     height: 66,
+    link: "https://ui.shadcn.com/",
   },
   {
     skill_name: "Drizzle",
     Image: "/drizzle.png",
     width: 66,
     height: 66,
+    link: "https://orm.drizzle.team/",
   },
   {
     skill_name: "T3",
     Image: "/t3.png",
     width: 66,
     height: 66,
+    link: "https://create.t3.gg/",
   },
 ];

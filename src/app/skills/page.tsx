@@ -40,7 +40,10 @@ const Skills = () => {
         <h1 className={`text-[14px] text-washed-blue-400`}>Skills</h1>
       </motion.div>
       <div className="flex flex-col-reverse gap-4 lg:flex-row lg:gap-32 items-center justify-center">
-        <motion.div variants={delay(6)} className={`block lg:hidden mt-8 text-center`}>
+        <motion.div
+          variants={delay(6)}
+          className={`block lg:hidden mt-8 text-center`}
+        >
           <Link href="/project">
             <Button
               onClick={() => setPath("/project")}
@@ -68,13 +71,14 @@ const Skills = () => {
               className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center"
             >
               {Lang.map((image, index, array) => (
-                <SkillDataProvider
-                  key={index}
-                  src={image.Image}
-                  width={image.width}
-                  height={image.height}
-                  index={array.length - index - 1}
-                />
+                  <SkillDataProvider
+                    key={index}
+                    src={image.Image}
+                    width={image.width}
+                    height={image.height}
+                    index={array.length - index - 1}
+                    link={image.link}
+                  />
               ))}
             </motion.div>
           </motion.div>
@@ -93,6 +97,7 @@ const Skills = () => {
                   width={image.width}
                   height={image.height}
                   index={index}
+                  link={image.link}
                 />
               ))}
             </motion.div>
@@ -112,6 +117,7 @@ const Skills = () => {
                   width={image.width}
                   height={image.height}
                   index={array.length - index - 1}
+                  link={image.link}
                 />
               ))}
             </motion.div>
@@ -131,6 +137,7 @@ const Skills = () => {
                   width={image.width}
                   height={image.height}
                   index={index}
+                  link={image.link}
                 />
               ))}
             </motion.div>
@@ -152,6 +159,7 @@ const Skills = () => {
                   width={image.width}
                   height={image.height}
                   index={index}
+                  link={image.link}
                 />
               ))}
             </motion.div>
