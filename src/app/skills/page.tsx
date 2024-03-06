@@ -40,7 +40,7 @@ const Skills = () => {
         <h1 className={`text-[14px] text-washed-blue-400`}>Skills</h1>
       </motion.div>
       <div className="flex flex-col-reverse gap-4 lg:flex-row lg:gap-32 items-center justify-center">
-        <motion.div variants={delay(6)} className={`mt-8 text-center`}>
+        <motion.div variants={delay(6)} className={`block lg:hidden mt-8 text-center`}>
           <Link href="/project">
             <Button
               onClick={() => setPath("/project")}
@@ -158,7 +158,7 @@ const Skills = () => {
           </motion.div>
           <motion.div
             variants={delay(6)}
-            className={`hidden md:mt-8 md:text-center`}
+            className={`hidden lg:block md:mt-8 md:text-center`}
           >
             <Link href="/project">
               <Button

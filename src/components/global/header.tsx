@@ -49,6 +49,7 @@ import {
 
 import { DropdownMenuGroup } from "@radix-ui/react-dropdown-menu";
 import { useUpdatePath } from "@/lib/providers/path-provider";
+import { Socials } from "@/lib/constants";
 
 const routes = [
   {
@@ -149,6 +150,13 @@ const Header: React.FC<HeaderProps> = (className) => {
             <FaLinkedin className={`text-3xl`} />
           </Button>
         </Link>
+        {/* {Socials.map((item) => (
+          <Link href={item.link} key={item.name}>
+            <Button variant="ghost" className="p-1">
+              {IconComponent ? <IconComponent/> : null}
+            </Button>
+          </Link>
+        ))} */}
       </aside>
       <aside className={`md:hidden pr-4 justify-start`}>
         <DropdownMenu>

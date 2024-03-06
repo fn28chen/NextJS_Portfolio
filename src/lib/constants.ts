@@ -1,7 +1,7 @@
 export const Socials = [
   {
     name: "Discord",
-    src: "/instagram.svg",
+    src: "/discord.svg",
     link: "https://discord.com/users/590144693338243092",
   },
   {
@@ -14,6 +14,11 @@ export const Socials = [
     src: "/discord.svg",
     link: "https://www.instagram.com/niccolo.28.machiavelli/",
   },
+  {
+    name: "LinkedIn",
+    src: "/linkedin.svg",
+    link: "https://www.linkedin.com/in/phong28zk/",
+  }
 ];
 
 export const Lang = [
