@@ -1,4 +1,13 @@
 "use client";
+
+import React from "react";
+import { motion } from "framer-motion";
+import Link from "next/link";
+
+import {
+  StackDataProvider,
+  SkillDataProvider,
+} from "../../components/global/skill-data-provider";
 import {
   Backend_skill,
   DB,
@@ -6,20 +15,14 @@ import {
   Lang,
   Main_Stack,
 } from "../../lib/constants";
-import React from "react";
-import {
-  StackDataProvider,
-  SkillDataProvider,
-} from "../../components/global/skill-data-provider";
-import { motion } from "framer-motion";
 import {
   delay,
   slideInFromLeft,
   slideInFromRight,
   slideInFromTop,
 } from "../../utils/motion";
+
 import { SparklesIcon } from "@heroicons/react/20/solid";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { LiaLongArrowAltRightSolid } from "react-icons/lia";
 import { useUpdatePath } from "@/lib/providers/path-provider";
