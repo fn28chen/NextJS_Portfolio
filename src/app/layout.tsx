@@ -5,7 +5,7 @@ import { ThemeProvider } from "@/lib/providers/next-theme-provider";
 import StarsCanvas from "@/components/global/star-background";
 import Header from "@/components/global/header";
 import { PathProvider } from "@/lib/providers/path-provider";
-
+import { SpeedInsights } from "@vercel/speed-insights/next";
 const font = Space_Grotesk({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -18,7 +18,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-
   return (
     <html lang="en">
       <body
@@ -29,6 +28,7 @@ export default function RootLayout({
           <ThemeProvider attribute={`class`} defaultTheme={`dark`}>
             <Header />
             {children}
+            <SpeedInsights />
           </ThemeProvider>
         </PathProvider>
       </body>
