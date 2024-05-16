@@ -60,7 +60,7 @@ const Skills = () => {
           <motion.div
             key={index}
             variants={
-              window.innerWidth >= 1024 // 1024px is typically considered the breakpoint for large screens
+              window.innerWidth < 1024
                 ? index % 2 === 0
                   ? slideInFromTop(0.75 + (index + 1) * 0.2)
                   : slideInFromBot(0.75 + (index + 1) * 0.2)
