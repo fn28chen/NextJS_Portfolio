@@ -174,7 +174,7 @@ const Skills = () => {
             <Link href="/project">
               <Button
                 onClick={() => setPath("/project")}
-                className={`hover:before:bg-redborder-red-500 relative h-[50px] w-60 overflow-hidden border border-green-500 bg-black px-3 text-green-500 shadow-2xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-green-500 before:transition-all before:duration-300 hover:text-white hover:shadow-green-500 hover:bg-black hover:before:left-0 hover:before:w-full 
+                className={`hover:before:bg-redborder-red-500 relative h-[50px] w-56 overflow-hidden border border-green-500 bg-black px-3 text-green-500 shadow-2xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-green-500 before:transition-all before:duration-300 hover:text-white hover:shadow-green-500 hover:bg-black hover:before:left-0 hover:before:w-full 
             `}
               >
                 <span
@@ -182,9 +182,7 @@ const Skills = () => {
                 >
                   Continue to my projects
                 </span>
-                <LiaLongArrowAltRightSolid
-                  className={`group-hover:${"display"} h-6 w-6 text-white group-hover:text-slate-900 transition-all duration-300 ${"group-hover:hidden"}`}
-                />
+                <LiaLongArrowAltRightSolid className="text-[24px] z-10"/>
               </Button>
             </Link>
           </motion.div>

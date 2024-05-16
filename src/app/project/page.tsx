@@ -19,95 +19,10 @@ import {
   slideInFromBot,
 } from "../../utils/motion";
 
-import HeroContent from "../intro/hero-content";
 import Image from "next/image";
 import Link from "next/link";
-
-const Projects = [
-  {
-    title: "Prodigy Cypress Website",
-    href: `https://github.com/cao28cao/prodigy-cypress`,
-    description: `This project will be released soon.`,
-    techStack: [
-      `NextJS`,
-      `TailwindCSS`,
-      `ShadCN`,
-      `TypeScript`,
-      `Drizzle`,
-      `SupaBase`,
-    ],
-  },
-  {
-    title: `T3 Spammer Emoji`,
-    href: `https://t3-git.vercel.app/`,
-    description: ``,
-    techStack: [`NextJS`, `TailwindCSS`, `ShadCN`, `TypeScript`, `Prisma`, `PostgreSQL`, `T3`],
-  },
-  {
-    title: `Reading List`,
-    href: `https://reading-list-opal.vercel.app/`,
-    description: `That's my reading list with API from open-library. It's use NextJS, TailwindCSS, TypeScript and shadcnUI as Front-end, axios as API client and use open-library API as a data source.`,
-    techStack: [`NextJS`, `TailwindCSS`, `TypeScript`, `ShadCN`],
-  },
-  {
-    title: `Twitter T3-stack clone`,
-    href: `https://t3-app-rho-three.vercel.app/`,
-    description: `A Twitter clone with local storage as a first-time I use T3-stack as a full-stack framework. That's can use as a playground in a group.`,
-    techStack: [`NextJS`, `TailwindCSS`, `TypeScript`, `Prisma`, `MySQL`],
-  },
-  {
-    title: `Blog`,
-    href: `https://blog-ketket.vercel.app/`,
-    description: `This is a blog build for Facebook Page for their 12 Cung Hoang Dao Series. It is a blog that allows users to read their daily horoscope and also allows users to read their daily fortune.`,
-    techStack: [
-      `NextJS`,
-      `TailwindCSS`,
-      `FramerMotion`,
-      `Prisma`,
-      `MySQL`,
-      `Sanity`,
-    ],
-  },
-  {
-    title: `Pro Chat`,
-    href: `https://oversimplifiedteam7.netlify.app/`,
-    description: `Pro Chat is a group project that I built in the 5th semester with my collaborators. It is a chat application that allows users to chat with each other in real-time.`,
-    techStack: [
-      `ReactJS`,
-      `TailwindCSS`,
-      `TypeScript`,
-      `Python`,
-      `SocketIO`,
-      `MongoDB`,
-    ],
-  },
-];
-
-function getFrameworkImageLink(framework: string) {
-  const frameworkImageLink: { [key: string]: string } = {
-    NextJS: `/next.png`,
-    TailwindCSS: `/tailwind.png`,
-    ShadCN: `/shadcn.png`,
-    TypeScript: `/ts.png`,
-    Drizzle: `/drizzle.png`,
-    Supabase: `/supabase.png`,
-    Prisma: `/prisma.webp`,
-    MySQL: `/mysql.png`,
-    FramerMotion: `/framer.png`,
-    ReactJS: `/react.png`,
-    Python: `/python.png`,
-    SocketIO: `/socket.png`,
-    MongoDB: `/mongodb.webp`,
-    JSONServer: `/jsonserver.png`,
-    SupaBase: `/supabase.png`,
-    Sanity: `/sanity.png`,
-    JSONserver: `/jsonserver.png`,
-    T3: `/t3.png`,
-    PostgreSQL: `/postger.png`,
-  };
-
-  return frameworkImageLink[framework];
-}
+import { Projects } from "@/lib/constants";
+import getFrameworkImageLink from "@/components/style/get-image-link";
 
 const FrameworkImage = ({ framework }: { framework: string }) => {
   const src = getFrameworkImageLink(framework);
@@ -138,24 +53,34 @@ const Skills = () => {
       </motion.div>
       <motion.div
         className={`
-        grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3
+        grid grid-cols-12
         gap-6 mt-6 text-sm sm:text-md md:text-base text-bold text-slate-100 z-10`}
       >
         {Projects.map((item, index) => (
           <motion.div
             key={index}
             variants={
-              index % 2 === 0
-                ? slideInFromTop(0.75 + (index + 1) * 0.2)
-                : slideInFromBot(0.75 + (index + 1) * 0.2)
+              window.innerWidth >= 1024 // 1024px is typically considered the breakpoint for large screens
+                ? index % 2 === 0
+                  ? slideInFromTop(0.75 + (index + 1) * 0.2)
+                  : slideInFromBot(0.75 + (index + 1) * 0.2)
+                : index % 2 === 0
+                  ? slideInFromLeft(0.75 + (index + 1) * 0.2)
+                  : slideInFromRight(0.75 + (index + 1) * 0.2)
             }
             className={`
           flex gap-6
           text-bold text-slate-100 
-          z-10 h-[220px]
-          lg:flex-row w-[300px]`}
+          z-10 h-[250px]
+          lg:flex-row w-[350px]
+          col-span-12
+          md:col-span-6
+          xl:col-span-4
+          `}
           >
-            <Card className={`w-[300px] items-center justify-center`}>
+            <Card
+              className={`w-full items-center justify-between flex flex-col p-4`}
+            >
               <CardHeader>
                 <CardTitle className={`text-base md:text-lg lg:text-2xl`}>
                   <Link
@@ -174,7 +99,7 @@ const Skills = () => {
                   {item.description}
                 </CardDescription>
               </CardContent>
-              <CardContent>
+              <CardContent className={`mt-auto`}>
                 <div className={`flex flex-row gap-2`}>
                   {item.techStack?.map((tech, index) => (
                     <FrameworkImage key={index} framework={tech} />
