@@ -6,6 +6,7 @@ import StarsCanvas from "@/components/global/star-background";
 import Header from "@/components/global/header";
 import { PathProvider } from "@/lib/providers/path-provider";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Spotlight } from "@/components/ui/spotlight";
 const font = Space_Grotesk({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -24,7 +25,10 @@ export default function RootLayout({
         className={`${font.className} bg-[#030014] overflow-y-scroll overflow-x-hidden`}
       >
         <PathProvider>
-          <StarsCanvas />
+          <Spotlight
+            className="-top-40 left-0 md:left-60 md:-top-20"
+            fill="white"
+          />
           <ThemeProvider attribute={`class`} defaultTheme={`dark`}>
             <Header />
             {children}

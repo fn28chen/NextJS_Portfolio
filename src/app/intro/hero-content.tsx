@@ -13,6 +13,7 @@ import { LiaLongArrowAltRightSolid } from "react-icons/lia";
 import { Button } from "../../components/ui/button";
 import Link from "next/link";
 import { useUpdatePath } from "@/lib/providers/path-provider";
+import { TextGenerateEffect } from "@/components/style/text-generator-effect";
 
 function Simple() {
   const { rive, RiveComponent } = useRive({
@@ -22,6 +23,9 @@ function Simple() {
   });
   return <RiveComponent />;
 }
+
+const words =
+  "Hello, I'm Tr Phong - Dominik, a web designer and developer, I am a person who is always curious about new things. Recently I am trying to challenge myself by learning web development with ambition to become a specialist.";
 
 const HeroContent = () => {
   const { setPath } = useUpdatePath();
@@ -35,7 +39,7 @@ const HeroContent = () => {
         className={`h-full w-full flex flex-col gap-5 justify-center text-start m-auto`}
       >
         <motion.div
-          variants={slideInFromTop(0.5)}
+          variants={slideInFromTop(0.2)}
           className={`Welcome-box py-2 px-4 border border-green-500 opacity-[0.9]`}
         >
           <SparklesIcon
@@ -47,7 +51,7 @@ const HeroContent = () => {
         </motion.div>
         {/* Name and the running text */}
         <motion.div
-          variants={slideInFromLeft(0.5)}
+          variants={slideInFromLeft(0.2)}
           className={`flex flex-col gap-6 mt-6 text-6xl text-bold text-slate-100 max-w-[750px] w-auto h-auto`}
         >
           <span
@@ -62,17 +66,14 @@ const HeroContent = () => {
             Front-End Developer
           </span>
         </motion.div>
-        <motion.p
-          variants={slideInFromLeft(1)}
+        <motion.div
+          variants={slideInFromLeft(0.5)}
           className={`text-sm md:text-lg lg:text-2xl text-gray-400 my-5 max-w-[600px] text-justify`}
         >
-          Hello, I{`'`}m Tr Phong - Dominik, a web designer and developer, I am
-          a person who is always curious about new things. Recently I am trying
-          to challenge myself by learning web development with ambition to
-          become a specialist.
-        </motion.p>
+          <TextGenerateEffect words={words} />
+        </motion.div>
         <motion.div
-          variants={slideInFromLeft(1)}
+          variants={slideInFromLeft(10)}
           className={`text-lg text-gray-400 my-5 max-w-[600px]`}
         >
           <Link href={`/about-me`} className={`group block`}>

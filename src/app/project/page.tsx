@@ -21,7 +21,7 @@ import {
 
 import Image from "next/image";
 import Link from "next/link";
-import { Projects } from "@/lib/constants";
+import { Projects } from "@/content/content";
 import getFrameworkImageLink from "@/components/style/get-image-link";
 
 const FrameworkImage = ({ framework }: { framework: string }) => {
@@ -54,7 +54,7 @@ const Skills = () => {
       <motion.div
         className={`
         grid grid-cols-12
-        gap-6 mt-6 text-sm sm:text-md md:text-base text-bold text-slate-100 z-10`}
+        gap-6 mt-6 text-sm sm:text-md md:text-base text-bold text-slate-100 z-10 h-[50vh]`}
       >
         {Projects.map((item, index) => (
           <motion.div

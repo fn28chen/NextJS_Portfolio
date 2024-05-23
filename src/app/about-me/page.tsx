@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
   Card,
@@ -16,20 +16,36 @@ import {
   slideInFromRight,
   slideInFromTop,
 } from "../../utils/motion";
-import { info } from "../../lib/constants";
+import { info } from "../../content/content";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { LiaLongArrowAltRightSolid } from "react-icons/lia";
 import { useUpdatePath } from "@/lib/providers/path-provider";
+import { EvervaultCardContent } from "@/components/ui/vault-card-test";
 
 const AboutMe = () => {
   const { setPath } = useUpdatePath();
+
+  const [animationVariant, setAnimationVariant] = useState({});
+  const index = 0; // Add the declaration of the 'index' variable here
+
+  useEffect(() => {
+    setAnimationVariant(
+      window.innerWidth >= 1024 // 1024px is typically considered the breakpoint for large screens
+        ? index % 2 === 0
+          ? slideInFromTop(0.75 + (index + 1) * 0.2)
+          : slideInFromBot(0.75 + (index + 1) * 0.2)
+        : index % 2 === 0
+        ? slideInFromLeft(0.75 + (index + 1) * 0.2)
+        : slideInFromRight(0.75 + (index + 1) * 0.2)
+    );
+  }, [index]);
 
   return (
     <motion.div
       initial="hidden"
       animate="visible"
-      className={`flex flex-col items-center justify-center mt-20 px-20 w-full z-[20]`}
+      className={`flex flex-col items-center justify-center mt-20 px-10 md:px-20 w-full h-full z-[20]`}
     >
       <motion.div
         variants={slideInFromTop(0.5)}
@@ -40,40 +56,30 @@ const AboutMe = () => {
       </motion.div>
       <motion.div
         className={`
-        grid grid-cols-1
-        sm:grid-cols-2 
-        gap-6 mt-6 text-sm sm:text-md md:text-base text-bold text-slate-100 z-10`}
+        grid grid-cols-12 grid-rows-12
+        gap-4 mt-6 text-sm sm:text-md md:text-base text-bold text-slate-100 z-10 h-full md:h-[70vh] lg:h-[50vh]`}
       >
         {info.map((item, index) => (
           <motion.div
             key={index}
             variants={
               index % 2 === 0
-                ? slideInFromLeft(0.75 + (index + 1) * 0.2)
-                : slideInFromRight(0.75 + (index + 1) * 0.2)
+                ? slideInFromTop(0.75 + (index + 1) * 0.2)
+                : slideInFromBot(0.75 + (index + 1) * 0.2)
             }
             className={`${
-              index % 2 === 0 ? `sm:mt-0 lg:mt-0 ` : `sm:mt-10 lg:mt-10 `
+              index % 2 === 0 ? `sm:mt-0 md:mt-0 lg:mt-0 ` : `sm:mt-0 md:mt-8 lg:mt-10 `
             }
-              flex gap-6
+              row-span-12 md:row-span-6 lg:row-span-3
+              col-span-12 md:col-span-6 lg:col-span-3
               text-bold text-slate-100 
-              z-10 max-w-[300px] h-[220px]
+              z-10 max-w-[300px] h-[30vh]
               lg:flex-row lg:max-w-[400px]`}
           >
-            <Card className={`hover:drop-shadow-xl pb-2`}>
-              <CardHeader>
-                <CardTitle className={`text-base md:text-lg lg:text-2xl`}>
-                  {item.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription
-                  className={`text-justify text-[12px] md:text-[14px]`}
-                >
-                  {item.description}
-                </CardDescription>
-              </CardContent>
-            </Card>
+            <EvervaultCardContent
+              title={item.title}
+              description={item.description}
+            />
           </motion.div>
         ))}
       </motion.div>
@@ -94,7 +100,7 @@ const AboutMe = () => {
             >
               Continue to my skills
             </span>
-            <LiaLongArrowAltRightSolid className="text-[24px] z-10"/>
+            <LiaLongArrowAltRightSolid className="text-[24px] z-10" />
           </Button>
         </Link>
       </motion.div>
@@ -103,3 +109,4 @@ const AboutMe = () => {
 };
 
 export default AboutMe;
+

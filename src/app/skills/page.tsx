@@ -14,7 +14,7 @@ import {
   Frontend_skill,
   Lang,
   Main_Stack,
-} from "../../lib/constants";
+} from "../../lib/constant";
 import {
   delay,
   slideInFromLeft,
@@ -33,7 +33,7 @@ const Skills = () => {
     <motion.div
       initial="hidden"
       animate="visible"
-      className={`flex flex-col items-center justify-center mt-20 px-20 w-full z-[20]`}
+      className={`flex flex-col items-center justify-center mt-20 px-20 w-full h-full z-[20]`}
     >
       <motion.div
         variants={slideInFromTop(0.5)}

@@ -91,7 +91,7 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = (className) => {
   const { path, setPath } = useUpdatePath();
 
-  console.log(path);
+  // console.log(path);
 
   return (
     <header

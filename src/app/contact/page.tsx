@@ -47,7 +47,7 @@ const Contact = () => {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
+    // console.log(values);
 
     try {
       await resend.emails.send({
@@ -65,7 +65,7 @@ const Contact = () => {
     <motion.div
       initial="hidden"
       animate="visible"
-      className={`flex flex-col items-center justify-center mt-20 px-20 w-full z-[20]`}
+      className={`flex flex-col items-center justify-center mt-20 px-20 w-full h-full z-[20]`}
     >
       <motion.div
         variants={slideInFromTop(0.5)}
