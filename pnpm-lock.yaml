@@ -51,7 +51,7 @@ importers:
         specifier: ^0.7.0
         version: 0.7.0
       clsx:
-        specifier: ^2.1.1
+        specifier: ^2.0.0
         version: 2.1.1
       lucide-react:
         specifier: ^0.294.0
@@ -78,7 +78,7 @@ importers:
         specifier: ^3.2.0
         version: 3.2.0
       tailwind-merge:
-        specifier: ^2.3.0
+        specifier: ^2.1.0
         version: 2.3.0
       tailwindcss-animate:
         specifier: ^1.0.7
@@ -115,7 +115,7 @@ importers:
         specifier: 14.0.3
         version: 14.0.3(eslint@8.57.0)(typescript@5.4.5)
       framer-motion:
-        specifier: ^10.18.0
+        specifier: ^10.16.14
         version: 10.18.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       postcss:
         specifier: ^8
