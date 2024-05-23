@@ -73,7 +73,7 @@ const AboutMe = () => {
               row-span-12 md:row-span-6 lg:row-span-3
               col-span-12 md:col-span-6 lg:col-span-3
               text-bold text-slate-100 
-              z-10 max-w-[300px] h-[30vh]
+              z-10 max-w-[300px] h-[35vh]
               lg:flex-row lg:max-w-[400px]`}
           >
             <EvervaultCardContent
