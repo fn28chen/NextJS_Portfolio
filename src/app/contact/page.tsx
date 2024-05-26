@@ -52,10 +52,12 @@ const Contact = () => {
     try {
       await resend.emails.send({
         from: values.email,
-        to: ["fcmunchen1901@gmail.com"],
+        to: ["phong.28.retzka@gmail.com"],
         subject: values.title,
         text: values.message,
       });
+      console.log("Email sent: ", values.email, values.title, values.message);
+      
     } catch (error) {
       console.error(error);
     }
@@ -119,6 +121,7 @@ const Contact = () => {
             type="submit"
             className={`hover:before:bg-redborder-red-500 relative h-10 w-20 overflow-hidden border border-green-500 bg-black px-3 text-green-500 shadow-2xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-green-500 before:transition-all before:duration-300 hover:text-white hover:shadow-green-500 hover:bg-black hover:before:left-0 hover:before:w-full 
             `}
+            
           >
             <span
               className={`group-hover:${"hidden"} text-white group-hover:text-black relative z-10`}
