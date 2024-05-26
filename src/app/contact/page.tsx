@@ -20,8 +20,8 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { sendEmail } from "@/app/api/send/route";
 
-const resend = new Resend(`re_b2veLBkB_NdDt1Y3uYny491N9SzAs6oEn`);
 
 const formSchema = z.object({
   email: z.string().min(2, {
@@ -46,20 +46,20 @@ const Contact = () => {
     },
   });
 
-  async function onSubmit(values: z.infer<typeof formSchema>) {
-    // console.log(values);
-
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    const resend = new Resend("re_cNNJ3BRR_5DqRBU8ZYSPM6aXYzXcofMTo");
     try {
-      await resend.emails.send({
+      const response = await resend.emails.send({
         from: values.email,
         to: ["phong.28.retzka@gmail.com"],
         subject: values.title,
         text: values.message,
       });
-      console.log("Email sent: ", values.email, values.title, values.message);
-      
+      const { data } = response;
+      console.log(data);
+      setPath("/");
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   }
 
@@ -77,6 +77,7 @@ const Contact = () => {
         <h1 className={`text-[14px] text-washed-blue-400`}>Contacts</h1>
       </motion.div>
       <Form {...form}>
+
         <form
           onSubmit={form.handleSubmit(onSubmit)}
           className="space-y-8 mt-8 relative w-1/2 items-center justify-center"

@@ -47,6 +47,9 @@ importers:
       '@rive-app/react-canvas':
         specifier: ^4.5.6
         version: 4.9.5(react@18.3.1)
+      '@types/nodemailer':
+        specifier: ^6.4.15
+        version: 6.4.15
       '@vercel/speed-insights':
         specifier: ^1.0.10
         version: 1.0.10(next@14.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
@@ -65,6 +68,9 @@ importers:
       next-themes:
         specifier: ^0.2.1
         version: 0.2.1(next@14.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      nodemailer:
+        specifier: ^6.9.13
+        version: 6.9.13
       react:
         specifier: ^18
         version: 18.3.1
@@ -906,6 +912,9 @@ packages:
 
   '@types/node@20.12.12':
     resolution: {integrity: sha512-eWLDGF/FOSPtAvEqeRAQ4C8LSA7M1I7i0ky1I8U7kD1J5ITyW3AsRhQrKVoWf5pFKZ2kILsEGJhsI9r93PYnOw==}
+
+  '@types/nodemailer@6.4.15':
+    resolution: {integrity: sha512-0EBJxawVNjPkng1zm2vopRctuWVCxk34JcIlRuXSf54habUWdz1FB7wHDqOqvDa8Mtpt0Q3LTXQkAs2LNyK5jQ==}
 
   '@types/offscreencanvas@2019.7.3':
     resolution: {integrity: sha512-ieXiYmgSRXUDeOntE1InxjWyvEelZGP63M+cGuquuRLuIKKT1osnkXjxev9B7d1nXSug5vpunx+gNlbVxMlC9A==}
@@ -2011,6 +2020,10 @@ packages:
 
   node-releases@2.0.14:
     resolution: {integrity: sha512-y10wOWt8yZpqXmOgRo77WaHEmhYQYGNA6y421PKsKYWEK8aW+cqAphborZDhqfyKrbZEN92CN1X2KbafY2s7Yw==}
+
+  nodemailer@6.9.13:
+    resolution: {integrity: sha512-7o38Yogx6krdoBf3jCAqnIN4oSQFx+fMa0I7dK1D+me9kBxx12D+/33wSb+fhOCtIxvYJ+4x4IMEhmhCKfAiOA==}
+    engines: {node: '>=6.0.0'}
 
   nopt@7.2.1:
     resolution: {integrity: sha512-taM24ViiimT/XntxbPyJQzCG+p4EKOpgD3mxFwW38mGjVUrfERQOeY4EDHjdnptttfHuHQXFx+lTP08Q+mLa/w==}
@@ -3518,6 +3531,10 @@ snapshots:
     dependencies:
       undici-types: 5.26.5
 
+  '@types/nodemailer@6.4.15':
+    dependencies:
+      '@types/node': 20.12.12
+
   '@types/offscreencanvas@2019.7.3': {}
 
   '@types/prop-types@15.7.12': {}
@@ -4788,6 +4805,8 @@ snapshots:
       - babel-plugin-macros
 
   node-releases@2.0.14: {}
+
+  nodemailer@6.9.13: {}
 
   nopt@7.2.1:
     dependencies:
