@@ -7,6 +7,7 @@ import Header from "@/components/global/header";
 import { PathProvider } from "@/lib/providers/path-provider";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Spotlight } from "@/components/ui/spotlight";
+import { Toaster } from "@/components/ui/toaster";
 const font = Space_Grotesk({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -35,6 +36,7 @@ export default function RootLayout({
             <SpeedInsights />
           </ThemeProvider>
         </PathProvider>
+        <Toaster />
       </body>
     </html>
   );

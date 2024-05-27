@@ -11,10 +11,15 @@ import { SparklesIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { sendEmail } from "@/lib/providers/send-email";
 import { useRouter } from "next/navigation";
+import { useToast } from "@/components/ui/use-toast";
 
 const Contact = () => {
 
   const router = useRouter();
+  const { toast } = useToast();
+  const currentTime = new Date();
+  const formattedTime = currentTime.toLocaleTimeString();
+  
   return (
     <motion.div
       initial="hidden"
@@ -35,6 +40,11 @@ const Contact = () => {
         className="mt-10 flex flex-col w-[20rem]"
         action = {async(formData) => {
           await sendEmail(formData);
+          router.push("/intro");
+          toast({
+            title: "Email sent",
+            description: `Your email has been sent successfully at ${formattedTime}`,
+          });
         }}
       >
         <input
