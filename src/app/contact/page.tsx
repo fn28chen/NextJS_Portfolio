@@ -20,7 +20,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { sendEmail } from "@/app/api/send/route";
+import { sendEmail } from "@/lib/providers/send-email";
 
 
 const formSchema = z.object({
@@ -47,16 +47,15 @@ const Contact = () => {
   });
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
-    const resend = new Resend("re_cNNJ3BRR_5DqRBU8ZYSPM6aXYzXcofMTo");
+    console.log(values);
     try {
-      const response = await resend.emails.send({
-        from: values.email,
-        to: ["phong.28.retzka@gmail.com"],
-        subject: values.title,
-        text: values.message,
-      });
-      const { data } = response;
-      console.log(data);
+      const formData = new FormData();
+      formData.append('email', values.email);
+      formData.append('title', values.title);
+      formData.append('message', values.message);
+      
+      const response = await sendEmail(formData);
+      console.log(response);
       setPath("/");
     } catch (error) {
       console.log(error);
@@ -76,62 +75,47 @@ const Contact = () => {
         <SparklesIcon className={`h-5 w-5 text-green-500 inline-block mr-2`} />
         <h1 className={`text-[14px] text-washed-blue-400`}>Contacts</h1>
       </motion.div>
-      <Form {...form}>
-
-        <form
-          onSubmit={form.handleSubmit(onSubmit)}
-          className="space-y-8 mt-8 relative w-1/2 items-center justify-center"
+      <motion.div
+        variants={slideInFromTop(0.5)}
+      >
+      <form
+        className="mt-10 flex flex-col w-[20rem]"
+        action = {async(formData) => {
+          await sendEmail(formData);
+        }}
+      >
+        <input
+          type="email"
+          placeholder="Email"
+          name="senderEmail"
+          className="border border-gray-400 p-2 mb-4 rounded-md"
+          required
+          maxLength={500}
+        />
+        <input
+          type="title"
+          placeholder="Title"
+          name="title"
+          className="border border-gray-400 p-2 mb-4 rounded-md"
+          required
+          maxLength={500}
+        />
+        <textarea
+          placeholder="Message"
+          name="message"
+          className="border border-gray-400 p-2 mb-4 rounded-md"
+          required
+          maxLength={500}
+        />
+        <Button
+          type="submit"
+          className="bg-green-500 text-white p-2 mt-4"
         >
-          <FormField
-            control={form.control}
-            name="email"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Email</FormLabel>
-                <FormControl>
-                  <Input placeholder="Your E-mail" {...field} />
-                </FormControl>
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="title"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Title</FormLabel>
-                <FormControl>
-                  <Input placeholder="Your Title" {...field} />
-                </FormControl>
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="message"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Message</FormLabel>
-                <FormControl>
-                  <Textarea placeholder="Your message" {...field} />
-                </FormControl>
-              </FormItem>
-            )}
-          />
-          <Button
-            type="submit"
-            className={`hover:before:bg-redborder-red-500 relative h-10 w-20 overflow-hidden border border-green-500 bg-black px-3 text-green-500 shadow-2xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-green-500 before:transition-all before:duration-300 hover:text-white hover:shadow-green-500 hover:bg-black hover:before:left-0 hover:before:w-full 
-            `}
-            
-          >
-            <span
-              className={`group-hover:${"hidden"} text-white group-hover:text-black relative z-10`}
-            >
-              Send
-            </span>
-          </Button>
-        </form>
-      </Form>
+          Send
+        </Button>
+
+      </form>
+      </motion.div>
     </motion.div>
   );
 };
