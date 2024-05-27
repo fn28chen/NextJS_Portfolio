@@ -44,6 +44,7 @@ const Contact = () => {
           toast({
             title: "Email sent",
             description: `Your email has been sent successfully at ${formattedTime}`,
+            duration: 3000,
           });
         }}
       >
