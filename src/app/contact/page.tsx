@@ -9,59 +9,12 @@ import { useUpdatePath } from "@/lib/providers/path-provider";
 import { SparklesIcon } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { sendEmail } from "@/lib/providers/send-email";
-
-
-const formSchema = z.object({
-  email: z.string().min(2, {
-    message: "Your email is required",
-  }),
-  title: z.string().min(2, {
-    message: "Your title is required",
-  }),
-  message: z.string().min(2, {
-    message: "Your message is required",
-  }),
-});
+import { useRouter } from "next/navigation";
 
 const Contact = () => {
-  const { setPath } = useUpdatePath();
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      email: "",
-      title: "",
-      message: "",
-    },
-  });
 
-  const onSubmit = async (values: z.infer<typeof formSchema>) => {
-    console.log(values);
-    try {
-      const formData = new FormData();
-      formData.append('email', values.email);
-      formData.append('title', values.title);
-      formData.append('message', values.message);
-      
-      const response = await sendEmail(formData);
-      console.log(response);
-      setPath("/");
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
+  const router = useRouter();
   return (
     <motion.div
       initial="hidden"

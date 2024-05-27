@@ -1,6 +1,7 @@
 "use server"
 import { Resend } from 'resend'
 import { validateString } from '../utils';
+import { toast } from '@/components/ui/use-toast';
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
