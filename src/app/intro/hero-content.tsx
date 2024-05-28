@@ -1,5 +1,5 @@
 "use client";
-import React, { useContext } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { useRive } from "@rive-app/react-canvas";
 import {
@@ -14,18 +14,8 @@ import { Button } from "../../components/ui/button";
 import Link from "next/link";
 import { useUpdatePath } from "@/lib/providers/path-provider";
 import { TextGenerateEffect } from "@/components/style/text-generator-effect";
-
-function Simple() {
-  const { rive, RiveComponent } = useRive({
-    src: "https://public.rive.app/community/runtime-files/1752-3469-coder.riv",
-    autoplay: true,
-    stateMachines: "Animation 1",
-  });
-  return <RiveComponent />;
-}
-
-const words =
-  "Hello, I'm Tr Phong - Dominik, a web designer and developer, I am a person who is always curious about new things. Recently I am trying to challenge myself by learning web development with ambition to become a specialist.";
+import { Describe } from "@/lib/constant";
+import { Simple } from "@/components/ui/rive-component";
 
 const HeroContent = () => {
   const { setPath } = useUpdatePath();
@@ -33,7 +23,7 @@ const HeroContent = () => {
     <motion.div
       initial="hidden"
       animate="visible"
-      className={`flex flex-row items-center justify-center mt-20 px-20 w-full z-[20]`}
+      className={`flex flex-col md:flex-row items-center justify-center mt-20 px-20 w-full z-[20] md:max-w-[800px] lg:max-w-[1000px] xl:max-w-full`}
     >
       <div
         className={`h-full w-full flex flex-col gap-5 justify-center text-start m-auto`}
@@ -70,7 +60,7 @@ const HeroContent = () => {
           variants={slideInFromLeft(0.5)}
           className={`text-sm md:text-lg lg:text-2xl text-gray-400 my-5 max-w-[600px] text-justify`}
         >
-          <TextGenerateEffect words={words} />
+          <TextGenerateEffect words={Describe} />
         </motion.div>
         <motion.div
           variants={slideInFromLeft(10)}
@@ -101,17 +91,15 @@ const HeroContent = () => {
         <div className={`flex-1 flex justify-center items-center`}>
           <div
             className={`
-              sm:w-[300px]
-              sm:h-[300px]
-              md:w-[400px]
-              md:h-[400px]
-              lg:w-[500px]
-              lg:h-[500px]
-              xl:w-[600px]
-              xl:h-[600px]
-              2xl:w-[700px]
-              2xl:h-[700px]
-              flex justify-center items-center
+              md:w-[300px]
+              md:h-[300px]
+              lg:w-[400px]
+              lg:h-[400px]
+              xl:w-[500px]
+              xl:h-[500px]
+              2xl:w-[600px]
+              2xl:h-[600px]
+              hidden md:flex justify-center items-center
             `}
             style={{ transform: "scale(1)" }}
           >

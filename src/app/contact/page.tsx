@@ -1,17 +1,16 @@
 "use client";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { Resend } from "resend";
-import { motion } from "framer-motion";
-import { slideInFromTop } from "../../utils/motion";
-import { useUpdatePath } from "@/lib/providers/path-provider";
-import { SparklesIcon } from "lucide-react";
-
-import { Button } from "@/components/ui/button";
-import { sendEmail } from "@/lib/providers/send-email";
 import { useRouter } from "next/navigation";
+
+import { motion } from "framer-motion";
+import {
+  slideInFromTop,
+} from "@/utils/motion";
+
+import { sendEmail } from "@/lib/providers/send-email";
+
 import { useToast } from "@/components/ui/use-toast";
+import { Button } from "@/components/ui/button";
+import { SparklesIcon } from "lucide-react";
 
 const Contact = () => {
 

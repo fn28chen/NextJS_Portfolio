@@ -21,6 +21,9 @@ export const Socials = [
   },
 ];
 
+export const Describe =
+  "Hello, I'm Tr Phong - Dominik, a web designer and developer, I am a person who is always curious about new things. Recently I am trying to challenge myself by learning web development with ambition to become a specialist.";
+
 export const Lang = [
   {
     skill_name: "Cpp",

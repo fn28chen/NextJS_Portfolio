@@ -1,41 +1,25 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { SparklesIcon } from "@heroicons/react/20/solid";
+import Link from "next/link";
+
+import {
+  slideInFromTop,
+  slideInFromBot,
+} from "../../utils/motion";
 
 import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { SparklesIcon } from "@heroicons/react/20/solid";
 
-import {
-  slideInFromLeft,
-  slideInFromRight,
-  slideInFromTop,
-  slideInFromBot,
-} from "../../utils/motion";
-
-import Image from "next/image";
-import Link from "next/link";
 import { Projects } from "@/content/content";
-import getFrameworkImageLink from "@/components/style/get-image-link";
+import { FrameworkImage } from "@/components/ui/framework-display";
 
-const FrameworkImage = ({ framework }: { framework: string }) => {
-  const src = getFrameworkImageLink(framework);
-  return (
-    <motion.div
-      className={`flex justify-center items-center gap-2`}
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.9 }}
-    >
-      <Image src={src} width={25} height={25} alt={`${framework}`} />
-    </motion.div>
-  );
-};
 
 const Skills = () => {
   return (

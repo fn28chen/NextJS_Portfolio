@@ -1,12 +1,10 @@
 "use client";
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { FaArrowRight } from "react-icons/fa";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   slideInFromLeft,
-  slideInFromRight,
   slideInFromTop,
 } from "../utils/motion";
 export default function Home() {
