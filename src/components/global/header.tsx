@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import SZP from "../../../public/SZP.gif";
+import Coder from "../../../public/coder.png";
 
 import {
   NavigationMenu,
@@ -86,7 +86,7 @@ const Header: React.FC<HeaderProps> = (className) => {
       className={`bg-black bg-opacity-50 py-2 fixed top-0 z-50 w-full px-12 flex justify-between items-center text-[20px] ${className}`}
     >
       <Link href={"/"} className="w-full flex flex-row items-center">
-        <Image src={SZP} alt="Maoffff" width={50} height={50} />
+        <Image src={Coder} alt="Coder" width={50} height={50} />
         <span className="font-semibold dark:text-white px-2 text-base">
           SZP
         </span>

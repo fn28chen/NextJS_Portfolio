@@ -1,11 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import Image from "next/image";
-import Link from "next/link";
-import { Button } from "../ui/button";
+import DataProvider from "@/components/global/data-provider";
 
 interface Props {
   src: string;
@@ -13,71 +9,44 @@ interface Props {
   height: number;
   index: number;
   link: string;
+  time_delay: number;
 }
 
-const StackDataProvider = ({ src, width, height, index, link }: Props) => {
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-  });
-
-  const imageVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 },
-  };
-
-  const animationDelay = 0.3;
+const StackDataProvider = ({ 
+  src, 
+  width, 
+  height, 
+  index, 
+  link,
+}: Props) => {
   return (
-    <motion.div
-      ref={ref}
-      initial="hidden"
-      variants={imageVariants}
-      animate={inView ? "visible" : "hidden"}
-      custom={index}
-      transition={{ delay: 3.5 + index * animationDelay }}
-    >
-      <Link href={link} className={`relative`} target="_blank" rel="noreferrer">
-        <Image
-          src={src}
-          width={width}
-          height={height}
-          alt="skill image"
-          className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12"
-        />
-      </Link>
-    </motion.div>
+    <DataProvider
+      src={src}
+      width={width}
+      height={height}
+      index={index}
+      link={link}
+      time_delay={3.5}
+    />
   );
 };
 
-const SkillDataProvider = ({ src, width, height, index, link }: Props) => {
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-  });
-
-  const imageVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 },
-  };
-
-  const animationDelay = 0.3;
+const SkillDataProvider = ({ 
+  src, 
+  width, 
+  height, 
+  index, 
+  link,
+}: Props) => {
   return (
-    <motion.div
-      ref={ref}
-      initial="hidden"
-      variants={imageVariants}
-      animate={inView ? "visible" : "hidden"}
-      custom={index}
-      transition={{ delay: 1.5 + index * animationDelay }}
-    >
-      <Link href={link} className={`relative`} target="_blank" rel="noreferrer">
-        <Image
-          src={src}
-          width={width}
-          height={height}
-          alt="skill image"
-          className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12"
-        />
-      </Link>
-    </motion.div>
+    <DataProvider
+      src={src}
+      width={width}
+      height={height}
+      index={index}
+      link={link}
+      time_delay={1.5}
+    />
   );
 };
 
@@ -88,29 +57,15 @@ const SkillDataProviderReverse = ({
   index,
   link,
 }: Props) => {
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-  });
-
-  const imageVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 },
-  };
-
-  const animationDelay = 0.3;
   return (
-    <motion.div
-      ref={ref}
-      initial="hidden"
-      variants={imageVariants}
-      animate={inView ? "visible" : "hidden"}
-      custom={index}
-      transition={{ delay: 4 + index * animationDelay }}
-    >
-      <Link href={link} className={`relative`} target="_blank" rel="noreferrer">
-        <Image src={src} width={width} height={height} alt="skill image" />
-      </Link>
-    </motion.div>
+    <DataProvider
+      src={src}
+      width={width}
+      height={height}
+      index={index}
+      link={link}
+      time_delay={4}
+    />
   );
 };
 
