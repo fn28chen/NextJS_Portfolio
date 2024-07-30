@@ -81,8 +81,6 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = (className) => {
   const { path, setPath } = useUpdatePath();
 
-  // console.log(path);
-
   return (
     <header
       className={`bg-black bg-opacity-50 py-2 fixed top-0 z-50 w-full px-12 flex justify-between items-center text-[20px] ${className}`}
