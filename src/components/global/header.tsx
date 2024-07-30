@@ -1,19 +1,14 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React from "react";
 import SZP from "../../../public/SZP.gif";
 
 import {
   NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuIndicator,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
-  NavigationMenuViewport,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
 import {
@@ -21,17 +16,12 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
 
-import { FaFacebookF } from "react-icons/fa6";
-import { BsTwitterX } from "react-icons/bs";
-import { FaLinkedin } from "react-icons/fa";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 
 import {
@@ -47,7 +37,7 @@ import {
   IoAddCircleSharp,
 } from "react-icons/io5";
 
-import { DropdownMenuGroup } from "@radix-ui/react-dropdown-menu";
+import { DropdownMenuGroup } from "@/components/ui/dropdown-menu";
 import { useUpdatePath } from "@/lib/providers/path-provider";
 import { Socials } from "@/lib/constant";
 
@@ -136,7 +126,7 @@ const Header: React.FC<HeaderProps> = (className) => {
       </NavigationMenu>
       <aside className="flex w-full gap-2 justify-end items-center">
         {Socials.map((item) => (
-          <Link href={item.link} key={item.name}>
+          <Link href={item.link} key={item.name} target="_blank">
             <Button variant="ghost" className="p-2">
               <Image src={item.src} alt={item.name} width={20} height={20} />
             </Button>
