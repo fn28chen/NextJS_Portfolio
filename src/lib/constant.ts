@@ -1,22 +1,22 @@
 export const Socials = [
   {
     name: "Discord",
-    src: "/discord.svg",
+    src: "/socials/discord.svg",
     link: "https://discord.com/users/590144693338243092",
   },
   {
     name: "Facebook",
-    src: "/facebook.svg",
+    src: "/socials/facebook.svg",
     link: "https://www.facebook.com/j4son.8.t1nda11/",
   },
   {
     name: "Instagram",
-    src: "/discord.svg",
+    src: "/socials/instagram.svg",
     link: "https://www.instagram.com/niccolo.28.machiavelli/",
   },
   {
     name: "LinkedIn",
-    src: "/linkedin.svg",
+    src: "/socials/linkedin.svg",
     link: "https://www.linkedin.com/in/phong28zk/",
   },
 ];

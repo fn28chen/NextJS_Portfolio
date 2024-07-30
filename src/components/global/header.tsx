@@ -49,7 +49,7 @@ import {
 
 import { DropdownMenuGroup } from "@radix-ui/react-dropdown-menu";
 import { useUpdatePath } from "@/lib/providers/path-provider";
-import { Socials } from "@/lib/constants";
+import { Socials } from "@/lib/constant";
 
 const routes = [
   {
@@ -135,28 +135,13 @@ const Header: React.FC<HeaderProps> = (className) => {
         </NavigationMenuList>
       </NavigationMenu>
       <aside className="flex w-full gap-2 justify-end items-center">
-        <Link href={"/"}>
-          <Button variant="ghost" className="p-1 hidden sm:block">
-            <FaFacebookF className={`text-3xl`} />
-          </Button>
-        </Link>
-        <Link href={"/"}>
-          <Button variant="ghost" className="p-1 hidden sm:block">
-            <BsTwitterX className={`text-3xl`} />
-          </Button>
-        </Link>
-        <Link href={"/"}>
-          <Button variant="ghost" className="p-1 hidden sm:block">
-            <FaLinkedin className={`text-3xl`} />
-          </Button>
-        </Link>
-        {/* {Socials.map((item) => (
+        {Socials.map((item) => (
           <Link href={item.link} key={item.name}>
-            <Button variant="ghost" className="p-1">
-              {IconComponent ? <IconComponent/> : null}
+            <Button variant="ghost" className="p-2">
+              <Image src={item.src} alt={item.name} width={20} height={20} />
             </Button>
           </Link>
-        ))} */}
+        ))}
       </aside>
       <aside className={`md:hidden pr-4 justify-start`}>
         <DropdownMenu>
