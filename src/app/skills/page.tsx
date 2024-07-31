@@ -15,17 +15,19 @@ import {
   Lang,
   Main_Stack,
 } from "../../lib/constant";
-import {
-  delay,
-  slideInFromTop,
-} from "../../utils/motion";
+import { delay, slideInFromTop } from "../../utils/motion";
 
 import { SparklesIcon } from "@heroicons/react/20/solid";
 import { Button } from "@/components/ui/button";
 import { LiaLongArrowAltRightSolid } from "react-icons/lia";
 import { useUpdatePath } from "@/lib/providers/path-provider";
+import {
+  Section,
+  SectionReverse,
+} from "../../components/reuse-comp/section-provider";
+import ContinueButton from "@/components/reuse-comp/continue-button";
+
 const Skills = () => {
-  const { setPath } = useUpdatePath();
 
   return (
     <motion.div
@@ -41,149 +43,44 @@ const Skills = () => {
         <h1 className={`text-[14px] text-washed-blue-400`}>Skills</h1>
       </motion.div>
       <div className="flex flex-col-reverse gap-4 lg:flex-row lg:gap-32 items-center justify-center">
-        <motion.div
-          variants={delay(6)}
-          className={`block lg:hidden mt-8 text-center`}
-        >
-          <Link href="/project">
-            <Button
-              onClick={() => setPath("/project")}
-              className={`hover:before:bg-redborder-red-500 relative h-[50px] w-60 overflow-hidden border border-green-500 bg-black px-3 text-green-500 shadow-2xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-green-500 before:transition-all before:duration-300 hover:text-white hover:shadow-green-500 hover:bg-black hover:before:left-0 hover:before:w-full 
-            `}
-            >
-              <span
-                className={`group-hover:${"hidden"} text-white group-hover:text-black relative z-10`}
-              >
-                Continue to my projects
-              </span>
-              <LiaLongArrowAltRightSolid
-                className={`group-hover:${"display"} h-6 w-6 text-white group-hover:text-slate-900 transition-all duration-300 ${"group-hover:hidden"}`}
-              />
-            </Button>
-          </Link>
-        </motion.div>
+        
         <div className="items-center justify-center">
-          <motion.div variants={delay(1)}>
-            <motion.p className={`px-4 py-4 text-center`}>
-              Programming Language
-            </motion.p>
-            <motion.div
-              variants={delay(1)}
-              className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center"
-            >
-              {Lang.map((image, index, array) => (
-                  <SkillDataProvider
-                    key={index}
-                    src={image.Image}
-                    width={image.width}
-                    height={image.height}
-                    index={array.length - index - 1}
-                    link={image.link}
-                  />
-              ))}
-            </motion.div>
-          </motion.div>
-          <motion.div variants={delay(1)}>
-            <motion.p className={`px-4 py-4 text-center`}>
-              Front-End Frameworks/Tools
-            </motion.p>
-            <motion.div
-              variants={delay(1)}
-              className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center"
-            >
-              {Frontend_skill.map((image, index) => (
-                <SkillDataProvider
-                  key={index}
-                  src={image.Image}
-                  width={image.width}
-                  height={image.height}
-                  index={index}
-                  link={image.link}
-                />
-              ))}
-            </motion.div>
-          </motion.div>
-          <motion.div variants={delay(1)}>
-            <motion.p className={`px-4 py-4 text-center`}>
-              Back-End Frameworks
-            </motion.p>
-            <motion.div
-              variants={delay(1)}
-              className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center"
-            >
-              {Backend_skill.map((image, index, array) => (
-                <SkillDataProvider
-                  key={index}
-                  src={image.Image}
-                  width={image.width}
-                  height={image.height}
-                  index={array.length - index - 1}
-                  link={image.link}
-                />
-              ))}
-            </motion.div>
-          </motion.div>
-          <motion.div variants={delay(1)}>
-            <motion.p className={`px-4 py-4 text-center`}>
-              Database and ORM
-            </motion.p>
-            <motion.div
-              variants={delay(1)}
-              className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center"
-            >
-              {DB.map((image, index) => (
-                <SkillDataProvider
-                  key={index}
-                  src={image.Image}
-                  width={image.width}
-                  height={image.height}
-                  index={index}
-                  link={image.link}
-                />
-              ))}
-            </motion.div>
-          </motion.div>
+          <Section
+            title="Programming Language"
+            list={Lang}
+            Component_Name={SkillDataProvider}
+          />
+
+          <SectionReverse
+            title="Front-End Frameworks/Tools"
+            list={Frontend_skill}
+            Component_Name={SkillDataProvider}
+          />
+
+          <Section
+            title="Back-End Frameworks"
+            list={Backend_skill}
+            Component_Name={SkillDataProvider}
+          />
+
+          <SectionReverse
+            title="Others"
+            list={DB}
+            Component_Name={SkillDataProvider}
+          />
         </div>
         <div className="items-center justify-center">
-          <motion.div variants={delay(3)}>
-            <motion.p className={`px-4 py-4 text-center`}>
-              My Main Stack
-            </motion.p>
-            <motion.div
-              variants={delay(3.5)}
-              className="grid grid-cols-3 items-center justify-center text-center md:flex md:flex-row md:flex-wrap md:justify-around mt-4 gap-5"
-            >
-              {Main_Stack.map((image, index) => (
-                <StackDataProvider
-                  key={index}
-                  src={image.Image}
-                  width={image.width}
-                  height={image.height}
-                  index={index}
-                  link={image.link}
-                />
-              ))}
-            </motion.div>
-          </motion.div>
-          <motion.div
-            variants={delay(6)}
+          <Section
+            title="Main Stack"
+            list={Main_Stack}
+            Component_Name={StackDataProvider}
+          />
+          <ContinueButton
+            nextPath="project"
+            variant={delay(5)}
+            content="Continue to my project"
             className={`hidden lg:block md:mt-8 md:text-center`}
-          >
-            <Link href="/project">
-              <Button
-                onClick={() => setPath("/project")}
-                className={`hover:before:bg-redborder-red-500 relative h-[50px] w-56 overflow-hidden border border-green-500 bg-black px-3 text-green-500 shadow-2xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-green-500 before:transition-all before:duration-300 hover:text-white hover:shadow-green-500 hover:bg-black hover:before:left-0 hover:before:w-full 
-            `}
-              >
-                <span
-                  className={`group-hover:${"hidden"} text-white group-hover:text-black relative z-10`}
-                >
-                  Continue to my projects
-                </span>
-                <LiaLongArrowAltRightSolid className="text-[24px] z-10"/>
-              </Button>
-            </Link>
-          </motion.div>
+        />
         </div>
       </div>
     </motion.div>

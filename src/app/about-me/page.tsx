@@ -14,6 +14,7 @@ import Link from "next/link";
 import { LiaLongArrowAltRightSolid } from "react-icons/lia";
 import { useUpdatePath } from "@/lib/providers/path-provider";
 import { EvervaultCardContent } from "@/components/ui/vault-card-test";
+import ContinueButton from "@/components/reuse-comp/continue-button";
 
 const AboutMe = () => {
   const { setPath } = useUpdatePath();
@@ -75,7 +76,7 @@ const AboutMe = () => {
           </motion.div>
         ))}
       </motion.div>
-      <motion.div
+      {/* <motion.div
         variants={slideInFromLeft(2)}
         className={`flex flex-row items-center justify-center mt-10 mb-5 md:mt-20 md:px-20 w-full z-[20] gap-2`}
       >
@@ -95,7 +96,13 @@ const AboutMe = () => {
             <LiaLongArrowAltRightSolid className="text-[24px] z-10" />
           </Button>
         </Link>
-      </motion.div>
+      </motion.div> */}
+      <ContinueButton
+        nextPath="skills"
+        variant={slideInFromLeft(2)}
+        content="Continue to my skills"
+        className={`flex flex-row items-center justify-center mt-10 mb-5 md:mt-20 md:px-20 w-full z-[20] gap-2`}
+      />
     </motion.div>
   );
 };

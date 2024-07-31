@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import DataProvider from "@/components/global/data-provider";
+import DataProvider from "@/components/reuse-comp/data-provider";
 
 interface Props {
   src: string;
@@ -9,7 +9,6 @@ interface Props {
   height: number;
   index: number;
   link: string;
-  time_delay: number;
 }
 
 const StackDataProvider = ({ 
