@@ -13,6 +13,7 @@ import { TextGenerateEffect } from "@/components/style/text-generator-effect";
 import { Describe } from "@/lib/constant";
 import { Simple } from "@/components/ui/rive-component";
 import ContinueButton from "@/components/reuse-comp/continue-button";
+import SparklesBox from "@/components/reuse-comp/sparkles-box";
 
 const HeroContent = () => {
   return (
@@ -24,17 +25,7 @@ const HeroContent = () => {
       <div
         className={`h-full w-full flex flex-col gap-5 justify-center text-start m-auto`}
       >
-        <motion.div
-          variants={slideInFromTop(0.2)}
-          className={`Welcome-box py-2 px-4 border border-green-500 opacity-[0.9]`}
-        >
-          <SparklesIcon
-            className={`h-5 w-5 text-green-500 inline-block mr-2`}
-          />
-          <h1 className={`text-[14px] text-washed-blue-400`}>
-            Front-End Developer
-          </h1>
-        </motion.div>
+        <SparklesBox button_name="Welcome" />
         <motion.div
           variants={slideInFromLeft(0.2)}
           className={`flex flex-col gap-6 mt-6 text-6xl text-bold text-slate-100 max-w-[750px] w-auto h-auto`}

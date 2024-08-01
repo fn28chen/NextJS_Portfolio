@@ -12,6 +12,7 @@ import { info } from "../../content/content";
 import { useUpdatePath } from "@/lib/providers/path-provider";
 import { EvervaultCardContent } from "@/components/ui/vault-card-test";
 import ContinueButton from "@/components/reuse-comp/continue-button";
+import SparklesBox from "@/components/reuse-comp/sparkles-box";
 
 const AboutMe = () => {
   const { setPath } = useUpdatePath();
@@ -37,13 +38,7 @@ const AboutMe = () => {
       animate="visible"
       className={`flex flex-col items-center justify-center mt-20 px-10 md:px-20 w-full h-full z-[20]`}
     >
-      <motion.div
-        variants={slideInFromTop(0.5)}
-        className={`Welcome-box py-2 px-4 border border-green-500 opacity-[0.9]`}
-      >
-        <SparklesIcon className={`h-5 w-5 text-green-500 inline-block mr-2`} />
-        <h1 className={`text-[14px] text-washed-blue-400`}>About Me</h1>
-      </motion.div>
+      <SparklesBox button_name="About Me" />
       <motion.div
         className={`
         grid grid-cols-12 grid-rows-12

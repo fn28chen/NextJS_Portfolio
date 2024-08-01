@@ -26,6 +26,7 @@ import {
   SectionReverse,
 } from "../../components/reuse-comp/section-provider";
 import ContinueButton from "@/components/reuse-comp/continue-button";
+import SparklesBox from "@/components/reuse-comp/sparkles-box";
 
 const Skills = () => {
 
@@ -35,13 +36,7 @@ const Skills = () => {
       animate="visible"
       className={`flex flex-col items-center justify-center mt-20 px-20 w-full h-full z-[20]`}
     >
-      <motion.div
-        variants={slideInFromTop(0.5)}
-        className={`Welcome-box py-2 px-4 border border-green-500 opacity-[0.9]`}
-      >
-        <SparklesIcon className={`h-5 w-5 text-green-500 inline-block mr-2`} />
-        <h1 className={`text-[14px] text-washed-blue-400`}>Skills</h1>
-      </motion.div>
+      <SparklesBox button_name="Skills" />
       <div className="flex flex-col-reverse gap-4 lg:flex-row lg:gap-32 items-center justify-center">
         
         <div className="items-center justify-center">

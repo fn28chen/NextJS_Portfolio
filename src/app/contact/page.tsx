@@ -11,6 +11,7 @@ import { sendEmail } from "@/lib/providers/send-email";
 import { useToast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
 import { SparklesIcon } from "lucide-react";
+import SparklesBox from "@/components/reuse-comp/sparkles-box";
 
 const Contact = () => {
 
@@ -25,13 +26,7 @@ const Contact = () => {
       animate="visible"
       className={`flex flex-col items-center justify-center mt-20 px-20 w-full h-full z-[20]`}
     >
-      <motion.div
-        variants={slideInFromTop(0.5)}
-        className={`Welcome-box py-2 px-4 border border-green-500 opacity-[0.9]`}
-      >
-        <SparklesIcon className={`h-5 w-5 text-green-500 inline-block mr-2`} />
-        <h1 className={`text-[14px] text-washed-blue-400`}>Contacts</h1>
-      </motion.div>
+      <SparklesBox button_name="Contact" />
       <motion.div
         variants={slideInFromTop(0.5)}
       >

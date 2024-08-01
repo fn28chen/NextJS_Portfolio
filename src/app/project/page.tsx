@@ -19,6 +19,7 @@ import { SparklesIcon } from "@heroicons/react/20/solid";
 
 import { Projects } from "@/content/content";
 import { FrameworkImage } from "@/components/ui/framework-display";
+import SparklesBox from "@/components/reuse-comp/sparkles-box";
 
 
 const Skills = () => {
@@ -28,13 +29,7 @@ const Skills = () => {
       animate="visible"
       className={`flex flex-col items-center justify-center mt-20 px-6 sm:px-20 w-full z-[20]`}
     >
-      <motion.div
-        variants={slideInFromTop(0.5)}
-        className={`Welcome-box py-2 px-4 border border-green-500 opacity-[0.9]`}
-      >
-        <SparklesIcon className={`h-5 w-5 text-green-500 inline-block mr-2`} />
-        <h1 className={`text-[14px] text-washed-blue-400`}>Projects</h1>
-      </motion.div>
+      <SparklesBox button_name="Projects" />
       <motion.div
         className={`
         grid grid-cols-12
