@@ -1,17 +1,13 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { useRive } from "@rive-app/react-canvas";
 import {
   slideInFromLeft,
   slideInFromRight,
   slideInFromTop,
 } from "@/utils/motion";
 import { SparklesIcon } from "@heroicons/react/20/solid";
-import { LiaLongArrowAltRightSolid } from "react-icons/lia";
 
-import { Button } from "../../components/ui/button";
-import Link from "next/link";
 import { useUpdatePath } from "@/lib/providers/path-provider";
 import { TextGenerateEffect } from "@/components/style/text-generator-effect";
 import { Describe } from "@/lib/constant";
@@ -19,7 +15,6 @@ import { Simple } from "@/components/ui/rive-component";
 import ContinueButton from "@/components/reuse-comp/continue-button";
 
 const HeroContent = () => {
-  const { setPath } = useUpdatePath();
   return (
     <motion.div
       initial="hidden"
@@ -40,7 +35,6 @@ const HeroContent = () => {
             Front-End Developer
           </h1>
         </motion.div>
-        {/* Name and the running text */}
         <motion.div
           variants={slideInFromLeft(0.2)}
           className={`flex flex-col gap-6 mt-6 text-6xl text-bold text-slate-100 max-w-[750px] w-auto h-auto`}

@@ -122,7 +122,7 @@ const Header: React.FC<HeaderProps> = (className) => {
           ))}
         </NavigationMenuList>
       </NavigationMenu>
-      <aside className="flex w-full gap-2 justify-end items-center">
+      <aside className="hidden md:flex w-full gap-2 justify-end items-center">
         {Socials.map((item) => (
           <Link href={item.link} key={item.name} target="_blank">
             <Button variant="ghost" className="p-2">

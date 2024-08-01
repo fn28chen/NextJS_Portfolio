@@ -9,12 +9,11 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  
   return (
-    <div className={`flex items-center justify-center w-full mt-20`}>
-      <div className={`relative flex flex-col h-full w-full items-center justify-center max-w-[90vw]`}>
+    <div
+      className={`relative flex flex-col h-full max-w-full items-center justify-center mt-20`}
+    >
       {children}
-    </div>
     </div>
   );
 }
