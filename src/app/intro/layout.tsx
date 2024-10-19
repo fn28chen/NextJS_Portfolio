@@ -1,8 +1,4 @@
 "use client";
-import { ThemeProvider } from "@/lib/providers/next-theme-provider";
-import StarsCanvas from "@/components/global/star-background";
-import { motion, useScroll, useSpring } from "framer-motion";
-import HeroContent from "./hero-content";
 
 export default function RootLayout({
   children,

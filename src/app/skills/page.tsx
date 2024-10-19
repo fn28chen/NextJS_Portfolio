@@ -2,7 +2,6 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
 
 import {
   StackDataProvider,
@@ -15,12 +14,8 @@ import {
   Lang,
   Main_Stack,
 } from "../../lib/constant";
-import { delay, slideInFromTop } from "../../utils/motion";
+import { delay } from "../../utils/motion";
 
-import { SparklesIcon } from "@heroicons/react/20/solid";
-import { Button } from "@/components/ui/button";
-import { LiaLongArrowAltRightSolid } from "react-icons/lia";
-import { useUpdatePath } from "@/lib/providers/path-provider";
 import {
   Section,
   SectionReverse,

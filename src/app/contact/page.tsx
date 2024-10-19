@@ -10,7 +10,6 @@ import { sendEmail } from "@/lib/providers/send-email";
 
 import { useToast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
-import { SparklesIcon } from "lucide-react";
 import SparklesBox from "@/components/reuse-comp/sparkles-box";
 
 const Contact = () => {

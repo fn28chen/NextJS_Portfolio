@@ -6,7 +6,6 @@ import {
   slideInFromRight,
   slideInFromTop,
 } from "@/utils/motion";
-import { SparklesIcon } from "@heroicons/react/20/solid";
 
 import { useUpdatePath } from "@/lib/providers/path-provider";
 import { TextGenerateEffect } from "@/components/style/text-generator-effect";
