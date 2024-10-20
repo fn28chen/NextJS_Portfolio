@@ -41,7 +41,7 @@ const AboutMe = () => {
       <motion.div
         className={`
         grid grid-cols-12 grid-rows-12
-        gap-4 mt-6 text-sm sm:text-md md:text-base text-bold text-slate-100 z-10 h-full md:h-[70vh] lg:h-[50vh]`}
+        gap-4 mt-6 text-sm sm:text-md md:text-base text-bold text-slate-100 z-10 h-full md:h-[80vh] lg:h-[60vh]`}
       >
         {info.map((item, index) => (
           <motion.div
@@ -57,7 +57,7 @@ const AboutMe = () => {
               row-span-12 md:row-span-6 lg:row-span-3
               col-span-12 md:col-span-6 lg:col-span-3
               text-bold text-slate-100 
-              z-10 max-w-[300px] h-[35vh]
+              z-10 max-w-[300px] h-[40vh]
               lg:flex-row lg:max-w-[400px]`}
           >
             <EvervaultCardContent
@@ -67,12 +67,11 @@ const AboutMe = () => {
           </motion.div>
         ))}
       </motion.div>
-      
       <ContinueButton
         nextPath="skills"
         variant={slideInFromLeft(2)}
         content="Continue to my skills"
-        className={`flex flex-row items-center justify-center mt-10 mb-5 md:mt-20 md:px-20 w-full z-[20] gap-2`}
+        className={`flex flex-row items-center justify-center mt-3 mb-5 md:mt-[60px] md:px-20 w-full z-[20] gap-2`}
       />
     </motion.div>
   );

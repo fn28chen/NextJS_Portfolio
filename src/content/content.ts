@@ -8,7 +8,7 @@ export const info = [
   },
   {
     title: `Education`,
-    description: `I am currently a fourth-year student at the Post Telecommunication Institute of Technology, specializing in Electronic Telecommunications. I have maintained an exceptional GPA of 3.43 out of 4.0, ranking in the top 1% of my department. Throughout my academic journey, I have been awarded semester scholarships six times, reflecting my dedication to excellence and my strong commitment to my field of study.`,
+    description: `I am currently a fiveth-year student at the Post Telecommunication Institute of Technology. I have maintained an exceptional GPA of 3.43 out of 4.0, ranking in the top 1%. Throughout my academic journey, I have been awarded semester scholarships six times, reflecting my dedication to strong commitment to my field of study.`,
   },
   {
     title: `Career Objective`,

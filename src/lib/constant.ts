@@ -7,7 +7,7 @@ export const Socials = [
   {
     name: "Facebook",
     src: "/socials/facebook.svg",
-    link: "https://www.facebook.com/baum.28.gatner/",
+    link: "https://www.facebook.com/fn.28.chen/",
   },
   {
     name: "Instagram",
@@ -17,7 +17,7 @@ export const Socials = [
   {
     name: "LinkedIn",
     src: "/socials/linkedin.svg",
-    link: "https://www.linkedin.com/in/phong28zk/",
+    link: "https://www.linkedin.com/in/fn28chen/",
   },
 ];
 
