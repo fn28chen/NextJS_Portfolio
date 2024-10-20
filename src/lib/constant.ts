@@ -22,7 +22,7 @@ export const Socials = [
 ];
 
 export const Describe =
-  "Hello, I'm Tr Phong, a web designer and developer, I am a person who is always curious about new things. Recently I am trying to challenge myself by learning web development with ambition to become a specialist.";
+  "Hello! I'm Tr Phong, a passionate web designer and developer with a strong curiosity for new technologies. Currently, I’m challenging myself by diving deeper into web development, fueled by my ambition to become a specialist in the field. I thrive on exploring innovative solutions and creating engaging user experiences. Excited to learn and grow, I look forward to making a meaningful impact in the web development community!";
 
 export const Lang = [
   {
