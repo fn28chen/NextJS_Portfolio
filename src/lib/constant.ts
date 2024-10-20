@@ -12,7 +12,7 @@ export const Socials = [
   {
     name: "Instagram",
     src: "/socials/instagram.svg",
-    link: "https://www.instagram.com/p.28.gmz/",
+    link: "https://www.instagram.com/fn.28.chen/",
   },
   {
     name: "LinkedIn",
@@ -22,7 +22,7 @@ export const Socials = [
 ];
 
 export const Describe =
-  "Hello, I'm Tr Phong - Dominik, a web designer and developer, I am a person who is always curious about new things. Recently I am trying to challenge myself by learning web development with ambition to become a specialist.";
+  "Hello, I'm Tr Phong, a web designer and developer, I am a person who is always curious about new things. Recently I am trying to challenge myself by learning web development with ambition to become a specialist.";
 
 export const Lang = [
   {
