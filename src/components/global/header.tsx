@@ -88,7 +88,7 @@ const Header: React.FC<HeaderProps> = (className) => {
       <Link href={"/"} className="w-full flex flex-row items-center">
         <Image src={Coder} alt="Coder" width={50} height={50} />
         <span className="font-semibold dark:text-white px-2 text-base">
-          SZP
+        咸陽
         </span>
       </Link>
       <NavigationMenu className="hidden md:block">
